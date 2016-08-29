@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.page.js.css">
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/contentManage.css" />
+    <SCRIPT src="/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="/js/jquery.page.js" type="text/javascript"></SCRIPT>
+    <SCRIPT type="text/javascript" src="/js/content.js"></SCRIPT>
+    <title>权限管理</title>
+</head>
+<body>
+<div class="content">
+    <div class="common_box">
+        <div class="zone1">
+            <h2>管理员操作</h2>
+            <table class="table authTable">
+                <tr>
+                    <td width="15%">添加管理员:</td>
+                    <td><input type="text" name="add_mailbox" id="add_mailbox" placeholder="邮箱前缀" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">选择权限:</td>
+                    <td class="checkbox_td">
+                        <input type="checkbox" value="1" />内容管理
+                        <input type="checkbox" value="2" />论坛管理
+                        <input type="checkbox" value="3" />权限管理
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="addAuth" class="submit float_input" id="addAuth" value="添加"/>
+                    </td>
+                </tr>
+            </table>
+            <hr/>
+            <table class="table authTable">
+                <tr>
+                    <td width="15%">删除管理员:</td>
+                    <td><input type="text" name="del_mailbox" id="del_mailbox" placeholder="邮箱前缀" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">选择权限:</td>
+                    <td class="checkbox_td">
+                        <input type="checkbox" value="1" />内容管理
+                        <input type="checkbox" value="2" />论坛管理
+                        <input type="checkbox" value="3" />权限管理
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="delAuth" class="submit float_input" id="delAuth" value="删除"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="common_box">
+        <div class="zone2">
+            <h2>管理员列表</h2>
+            <table class="table authTable listTable">
+                <tr>
+                    <th>邮箱</th>
+                    <th>密码</th>
+                    <th>执行者</th>
+                    <th>添加时间</th>
+                </tr>
+                <tr>
+                    <td>yangfan13</td>
+                    <td>123456</td>
+                    <td>shimin1</td>
+                    <td>2016-02-01 12:06:48</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="common_box">
+        <div class="zone3">
+            <h2>操作日志</h2>
+            <table class="table authTable listTable">
+                <tr>
+                    <th>操作人</th>
+                    <th>时间</th>
+                    <th>操作内容</th>
+                    <th>IP</th>
+                </tr>
+                <tr>
+                    <td>yangfan13</td>
+                    <td>2016-02-01 12:07:19</td>
+                    <td>修改文章＊＊＊标题</td>
+                    <td>10.209.74.137</td>
+                </tr>
+            </table>
+            <div id="pager1"></div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $("#pager1").createPage({
+        pageCount: 10,
+        current: 3,
+        backFn: function (page) {
+            window.location.reload();
+        }
+    })
+</script>
+</body>
+</html>
