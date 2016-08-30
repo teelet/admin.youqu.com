@@ -13,8 +13,12 @@ class LoginController extends AbstractController {
      */
 
     public function indexAction() {
+        $form = Comm_Context::param('from', '');
+        if($form == 'logout'){
+            setcookie('status', 'logout');
+        }
+        $this->data['userName'] = $_COOKIE['user'];
         $this->tpl = 'login.phtml';
-
         $this->assign();
         return $this->end();
     }

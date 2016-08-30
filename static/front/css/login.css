@@ -139,3 +139,9 @@ a{
     color: rgb(255, 255, 255);
     font-weight: bold
 }
+#checkMsg{
+    width : 290px;
+    margin: 0 auto;
+    text-align: left;
+    color: red;
+}

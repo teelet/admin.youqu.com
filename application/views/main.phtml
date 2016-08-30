@@ -15,8 +15,8 @@
             <span class="header_span1">游趣-运营后台管理系统</span>
         </div>
         <div class="header_div2">
-            <a class="div2_a1 a_common1" href="#">账号:xxx</a>
-            <a class="div2_a2 a_common1" href="#">退出 !</a>
+            <a class="div2_a1 a_common1" href="#">账号:&nbsp;&nbsp; <?=$userName?></a>
+            <a class="div2_a2 a_common1" href="/login?from=logout">退出 !</a>
         </div>
     </div>
 
@@ -24,7 +24,36 @@
     <div class="main clear">
         <div class="left">
             <ul>
-                <li><a href="/contentManage" target="main_show">内容管理</a><input type="hidden" value="内容管理"></li>
+                <?php
+                if(! empty($auth)):
+                        foreach ($auth as $key => $item):
+                            if(count($item) == 1):
+                ?>
+                                <li><a href="<?=$item[0]['url']?>" target="main_show"><?=$class[$key]?></a><input type="hidden" value="<?=$class[$key]?>"></li>
+
+                <?php
+                            else:
+                ?>
+                                <li class="toggle_li"><a><?=$class[$key]?></a><input type="hidden" value="none">
+                                    <ul>
+                <?php
+                                foreach ($item as $it):
+                ?>
+                                        <li><a href="<?=$it['url']?>" target="main_show"><?=$it['authName']?></a><input type="hidden" value="<?=$class[$key]?> > <?=$it['authName']?>"></li>
+                <?php
+                                endforeach;
+                ?>
+                                    </ul>
+                                </li>
+                <?php
+                            endif;
+                    endforeach;
+                endif;
+                ?>
+
+
+
+                <!--<li><a href="/contentManage" target="main_show">内容管理</a><input type="hidden" value="内容管理"></li>
                 <li class="toggle_li"><a>其他操作</a><input type="hidden" value="none">
                     <ul>
                         <li><a href="/changeKnowledgeDb" target="main_show">更新知识库</a><input type="hidden" value="其他操作 > 更新知识库"></li>
@@ -34,6 +63,7 @@
                     </ul>
                 </li>
                 <li><a href="/authManage" target="main_show">权限管理</a><input type="hidden" value="权限管理"></li>
+                -->
             </ul>
         </div>
         <div class="right">

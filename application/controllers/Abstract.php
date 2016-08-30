@@ -29,13 +29,13 @@ class AbstractController extends Yaf_Controller_Abstract {
     }
     
     /*输出json串*/
-    public function jsonResult($json_encode = TRUE) {
+    public function jsonResult($json_encode = FALSE) {
         try {
             if($json_encode){
+                return json_decode($this->data);
+            }else{
                 header('Content-type:text/json; charset=utf-8');
                 echo json_encode($this->data);
-            }else{
-                return json_decode($this->data);
             }
         }catch (Exception $e) {
             echo $e->getMessage();

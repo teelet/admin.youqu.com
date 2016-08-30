@@ -6,19 +6,36 @@
 
 class IndexController extends AbstractController {
 
-	/** 
+    /**
      * 默认动作
      */
-    
-	public function indexAction() {
-	    $this->tpl = 'main.phtml'; //试图页面
-	    /*
-        $this->data = array(); //试图页数据
-		$get = $this->getRequest()->getQuery("name", "aaa"); //获取参数
-		$this->data['name'] = $get;
-	    */
-	    //渲染
-		$this->assign();
-		return $this->end();
-	}
+
+    public function indexAction() {
+        //判断用户是否登录
+        $status = $_COOKIE['status'];
+        if(empty($status) || $status == 'logout'){
+            header('location: /login');
+        }
+        $userName = $_COOKIE['user'];
+        $this->tpl = 'main.phtml'; //试图页面
+        $this->data['userName'] = $userName;
+
+        //获取管理员的权限
+        $userAuth = User_UserModel::getUserAuth($userName);
+        //所有权限
+        $allAuth = Comm_Config::getPhpConf('auth.auth');
+        //权限所属类目
+        $allClass = Comm_Config::getPhpConf('auth.class');
+        //过滤用户权限
+        $this->data['auth'] = array();
+        foreach ($userAuth as $auth){
+            $item = $allAuth[$auth];
+            $this->data['auth'][$item['classId']][] = $item;
+        }
+        ksort($this->data['auth']);
+        $this->data['class'] = $allClass;
+        //渲染
+        $this->assign();
+        return $this->end();
+    }
 }
