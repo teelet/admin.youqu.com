@@ -15,7 +15,7 @@ class User_UserModel {
         $config = Comm_Config::getPhpConf('db/db.'.self::db.'.read');
         $instance = Comm_Db_Handler::getInstance(self::db, $config);
         $auth = $instance->field('auth')->where('username = \''.$userName.'\'')->limit(1)->select('root')[0];
-        return explode(',', $auth['auth']);
+        return $auth['auth'];
     }
 
     public static function checkLoginInfo($userName, $password){

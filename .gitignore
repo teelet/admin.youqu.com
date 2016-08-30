@@ -3,3 +3,5 @@ sftp-config.json
 #mac:
 .DS_Store
 .ds_store
+#phpstorm
+.idea

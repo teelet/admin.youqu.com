@@ -2,40 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7366430-4fcc-4245-9706-3381c21f4e66" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.project" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/sftp-config.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Abstract.php" afterPath="$PROJECT_DIR$/application/controllers/Abstract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Addalias.php" afterPath="$PROJECT_DIR$/application/controllers/Addalias.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Addarticle.php" afterPath="$PROJECT_DIR$/application/controllers/Addarticle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Addtag.php" afterPath="$PROJECT_DIR$/application/controllers/Addtag.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Authmanage.php" afterPath="$PROJECT_DIR$/application/controllers/Authmanage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Changeknowledgedb.php" afterPath="$PROJECT_DIR$/application/controllers/Changeknowledgedb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Contentedit.php" afterPath="$PROJECT_DIR$/application/controllers/Contentedit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Contentmanage.php" afterPath="$PROJECT_DIR$/application/controllers/Contentmanage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php" afterPath="$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Index.php" afterPath="$PROJECT_DIR$/application/controllers/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Login.php" afterPath="$PROJECT_DIR$/application/controllers/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/addAlias.phtml" afterPath="$PROJECT_DIR$/application/views/addAlias.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/addArticle.phtml" afterPath="$PROJECT_DIR$/application/views/addArticle.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/addTag.phtml" afterPath="$PROJECT_DIR$/application/views/addTag.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/authManage.phtml" afterPath="$PROJECT_DIR$/application/views/authManage.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/changeKnowledgeDb.phtml" afterPath="$PROJECT_DIR$/application/views/changeKnowledgeDb.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/contentEdit.phtml" afterPath="$PROJECT_DIR$/application/views/contentEdit.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/contentManage.phtml" afterPath="$PROJECT_DIR$/application/views/contentManage.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login.phtml" afterPath="$PROJECT_DIR$/application/views/login.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main.phtml" afterPath="$PROJECT_DIR$/application/views/main.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/auth.php" afterPath="$PROJECT_DIR$/conf/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/content.css" afterPath="$PROJECT_DIR$/static/front/css/content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/contentManage.css" afterPath="$PROJECT_DIR$/static/front/css/contentManage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/jquery.page.js.css" afterPath="$PROJECT_DIR$/static/front/css/jquery.page.js.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/login.css" afterPath="$PROJECT_DIR$/static/front/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/main.css" afterPath="$PROJECT_DIR$/static/front/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/content.js" afterPath="$PROJECT_DIR$/static/front/js/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/contentManage.js" afterPath="$PROJECT_DIR$/static/front/js/contentManage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/login.js" afterPath="$PROJECT_DIR$/static/front/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/main.js" afterPath="$PROJECT_DIR$/static/front/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/image/main.html" afterPath="$PROJECT_DIR$/static/image/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/User/User.php" afterPath="$PROJECT_DIR$/application/models/User/User.php" />
     </list>
     <ignored path="youqu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
                 <element signature="e#6#75#0#PHP" expanded="true" />
               </folding>
@@ -68,47 +40,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checklogin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+            <state relative-caret-position="274">
+              <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
               <folding>
                 <element signature="e#6#53#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.phtml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/main.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="31" column="150" selection-start-line="31" selection-start-column="150" selection-end-line="31" selection-end-column="150" />
-              <folding>
-                <element signature="e#556#562#0#HTML" expanded="true" />
-                <element signature="e#562#568#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -121,7 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/test.html" />
         <option value="$PROJECT_DIR$/application/models/Article/Article.php" />
         <option value="$PROJECT_DIR$/conf/db/db.php" />
         <option value="$PROJECT_DIR$/conf/redis/redis.php" />
@@ -164,14 +102,15 @@
         <option value="$PROJECT_DIR$/static/front/css/login.css" />
         <option value="$PROJECT_DIR$/application/controllers/Abstract.php" />
         <option value="$PROJECT_DIR$/application/library/Comm/Db/Mysql.php" />
-        <option value="$PROJECT_DIR$/application/models/User/User.php" />
         <option value="$PROJECT_DIR$/application/controllers/Login.php" />
         <option value="$PROJECT_DIR$/application/views/login.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php" />
         <option value="$PROJECT_DIR$/static/front/js/login.js" />
-        <option value="$PROJECT_DIR$/application/controllers/Index.php" />
         <option value="$PROJECT_DIR$/conf/auth.php" />
         <option value="$PROJECT_DIR$/application/views/main.phtml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/application/models/User/User.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Index.php" />
       </list>
     </option>
   </component>
@@ -240,7 +179,70 @@
     <panes>
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.youqu.com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
@@ -361,18 +363,18 @@
       <workItem from="1472452281457" duration="764000" />
       <workItem from="1472453319025" duration="13596000" />
       <workItem from="1472539085000" duration="4216000" />
-      <workItem from="1472543523056" duration="4345000" />
+      <workItem from="1472543523056" duration="5083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79996000" />
+    <option name="totallyTimeSpent" value="80734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="36" y="23" width="1240" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24495412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2445743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879376" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -410,7 +412,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Nav/Nav.php" />
     <entry file="file://$PROJECT_DIR$/application/models/Article/Article.php" />
     <entry file="file://$PROJECT_DIR$/application/models/Msg/Msg.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -523,12 +524,12 @@
         <state relative-caret-position="1155">
           <caret line="77" column="11" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="11" />
           <folding>
-            <marker date="1472454405000" expanded="true" signature="1766:1772" ph=" " />
-            <marker date="1472454405000" expanded="true" signature="1837:1843" ph=" " />
-            <marker date="1472454405000" expanded="true" signature="1843:1849" ph=" " />
-            <marker date="1472454405000" expanded="true" signature="2772:2778" ph=" " />
-            <marker date="1472454405000" expanded="true" signature="2817:2823" ph=" " />
-            <marker date="1472454405000" expanded="true" signature="2823:2829" ph=" " />
+            <marker date="1472548488000" expanded="true" signature="1766:1772" ph=" " />
+            <marker date="1472548488000" expanded="true" signature="1837:1843" ph=" " />
+            <marker date="1472548488000" expanded="true" signature="1843:1849" ph=" " />
+            <marker date="1472548488000" expanded="true" signature="2772:2778" ph=" " />
+            <marker date="1472548488000" expanded="true" signature="2817:2823" ph=" " />
+            <marker date="1472548488000" expanded="true" signature="2823:2829" ph=" " />
           </folding>
         </state>
       </provider>
@@ -715,16 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -757,12 +748,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
+    <entry file="file://$PROJECT_DIR$/application/views/main.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state relative-caret-position="465">
+          <caret line="31" column="150" selection-start-line="31" selection-start-column="150" selection-end-line="31" selection-end-column="150" />
           <folding>
-            <element signature="e#6#53#0#PHP" expanded="true" />
+            <element signature="e#556#562#0#HTML" expanded="true" />
+            <element signature="e#562#568#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -775,13 +785,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main.phtml">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="31" column="150" selection-start-line="31" selection-start-column="150" selection-end-line="31" selection-end-column="150" />
+        <state relative-caret-position="274">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
           <folding>
-            <element signature="e#556#562#0#HTML" expanded="true" />
-            <element signature="e#562#568#0#HTML" expanded="true" />
+            <element signature="e#6#53#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -20,12 +20,17 @@ class IndexController extends AbstractController {
         $this->tpl = 'main.phtml'; //试图页面
         $this->data['userName'] = $userName;
 
-        //获取管理员的权限
-        $userAuth = User_UserModel::getUserAuth($userName);
         //所有权限
         $allAuth = Comm_Config::getPhpConf('auth.auth');
         //权限所属类目
         $allClass = Comm_Config::getPhpConf('auth.class');
+        //获取管理员的权限
+        $userAuth = User_UserModel::getUserAuth($userName);
+        if($userAuth == '*'){
+            $userAuth = array_keys($allAuth);
+        }else{
+            $userAuth = explode(',', $userAuth);
+        }
         //过滤用户权限
         $this->data['auth'] = array();
         foreach ($userAuth as $auth){
