@@ -79,7 +79,7 @@ $(function () {
     $(".authTable #delAuth").click(function(e){
         var user = $(".authTable #del_mailbox").val();
         if(user == ""){
-            alert("邮箱前缀不能为空！");
+            alert("用户名不能为空！");
             return;
         }
         var selected = new Array();
@@ -104,7 +104,7 @@ $(function () {
     $(".authTable #addAuth").click(function(){
         var user = $(".authTable #add_mailbox").val();
         if(user == ""){
-            alert("邮箱前缀不能为空！");
+            alert("用户名不能为空！");
             return;
         }
     });

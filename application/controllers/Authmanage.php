@@ -14,7 +14,7 @@ class AuthmanageController extends AbstractController {
 
     public function indexAction() {
         $this->tpl = 'authManage.phtml';
-
+        $this->data['auth'] = Comm_Config::getPhpConf('auth.auth');
         $this->assign();
         return $this->end();
     }

@@ -14,43 +14,27 @@
 <div class="content">
     <div class="common_box">
         <div class="zone1">
-            <h2>管理员操作</h2>
+            <h2>更新管理员权限</h2>
             <table class="table authTable">
                 <tr>
-                    <td width="15%">添加管理员:</td>
-                    <td><input type="text" name="add_mailbox" id="add_mailbox" placeholder="邮箱前缀" /></td>
+                    <td width="15%">管理员:</td>
+                    <td><input type="text" name="add_mailbox" id="add_mailbox" placeholder="用户名" /></td>
                 </tr>
                 <tr>
                     <td style="vertical-align: top">选择权限:</td>
                     <td class="checkbox_td">
-                        <input type="checkbox" value="1"  id="chk_add_one"/><label for="chk_add_one">内容管理</label>
-                        <input type="checkbox" value="2"  id="chk_add_two"/><label for="chk_add_two">其他操作</label>
-                        <input type="checkbox" value="3"  id="chk_add_three"/><label for="chk_add_three">权限管理</label>
+                        <?php
+                            foreach ($auth as $key => $value):
+                        ?>
+                                <input type="checkbox" value="<?=$key?>" /><label><?=$value['authName']?></label>
+                        <?php
+                            endforeach;
+                        ?>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="addAuth" class="submit float_input" id="addAuth" value="添加"/>
-                    </td>
-                </tr>
-            </table>
-            <hr/>
-            <table class="table authTable">
-                <tr>
-                    <td width="15%">删除管理员:</td>
-                    <td><input type="text" name="del_mailbox" id="del_mailbox" placeholder="邮箱前缀" /></td>
-                </tr>
-                <tr>
-                    <td style="vertical-align: top">选择权限:</td>
-                    <td class="checkbox_td" id="del_auth">
-                        <input type="checkbox" value="1" id="chk_one"/><label for="chk_one">内容管理</label>
-                        <input type="checkbox" value="2" id="chk_two"/><label for="chk_two">其他操作</label>
-                        <input type="checkbox" value="3" id="chk_three"/><label for="chk_three">权限管理</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="delAuth" class="submit float_input" id="delAuth" value="删除"/>
+                        <input type="submit" name="addAuth" class="submit float_input" id="addAuth" value="操作"/>
                     </td>
                 </tr>
             </table>
