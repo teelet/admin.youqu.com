@@ -65,7 +65,7 @@ $(function () {
         var index=secondLength + 1;
         var name="secondClassTag" + index;
         var value = $("#tag2add").val() + ":" +$("#tagScore").val();
-        $("#secondClassTagCollect").append("<input type='checkbox' name='"+name+"' value='"+value+"' tag='"+$("#firstClassTag").val()+"'  id='"+name+"'/>&nbsp;<label for='"+name+"'>"+value+"</label>&nbsp;&nbsp;");
+        $("#secondClassTagCollect").append("<input type='checkbox' name='"+name+"' value='"+value+"' tag='"+$("#firstClassTag").val()+"'  id='"+name+"' checked/>&nbsp;<label for='"+name+"'>"+value+"</label>&nbsp;&nbsp;");
         secondClassArray[$("#firstClassTag").val()][name] = new Array();
         secondClassArray[$("#firstClassTag").val()][name][0] = false;
         secondClassArray[$("#firstClassTag").val()][name][1] = value;
@@ -82,13 +82,19 @@ $(function () {
             alert("邮箱前缀不能为空！");
             return;
         }
-        var index = $(".authTable #del_auth").val();
+        var selected = new Array();
+        $("#del_auth input[type=checkbox]").each(function(){
+            if($(this).is(":checked")){
+                selected.push($(this).next("label").text());    
+            }
+        });
+        var len = selected.length;
         var msg = "";
-        if(index == 0){
+        if(len == 0){
             msg = "确认删除账号"+user+"？";
         }else{
-            var auth = $(".authTable #del_auth").find("option").eq(index).text();
-            msg = "确认删除"+user+"的“"+auth+"”权限？";
+            var auth = selected.join(",");
+            msg = "确认删除"+user+"的 “"+auth+"” 权限？";
         }
         if(!confirm(msg)){
             e.preventDefault();
