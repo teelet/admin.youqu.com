@@ -1,0 +1,5 @@
+#vsftp.json:
+sftp-config.json
+#mac:
+.DS_Store
+.ds_store
