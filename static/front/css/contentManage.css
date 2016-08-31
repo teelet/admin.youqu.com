@@ -45,6 +45,13 @@ select{
     margin: 10px 20px 0px 10px;
     background-color: #ebebeb;
 }
+select.short{
+    height: 25px;
+    border: 1px solid #e1e0e0;
+    width: 120px;
+    margin: 10px 20px 0px 10px;
+    background-color: #ebebeb;
+}
 .submit{
     color: white;;
     height: 25px;
