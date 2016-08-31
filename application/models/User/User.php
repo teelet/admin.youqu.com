@@ -35,4 +35,73 @@ class User_UserModel {
         }
         return 0;
     }
+
+    /**
+     *  得到所有管理员
+    **/
+    public static function getAllRoot(){
+        // 连接数据库
+        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.write');
+        $instance = Comm_Db_Handler::getInstance(self::db, $config);
+        $users = $instance->select('root',array("username","auth","atime","excutor"),array());
+        // 得到所有的auth
+        $auth = Comm_Config::getPhpConf('auth.auth');
+        for ($i=0; $i < count($users); $i++) { 
+            $auth_tmp = explode(',', $users[$i]['auth']);
+            if($auth_tmp[0] == '*'){
+                $users[$i]['auth'] = "*";
+            }else{
+                $auth_tmp_arr = array();
+                foreach ($auth_tmp as $v) {
+                    $auth_tmp_arr[] = $auth[$v]["authName"];
+                }
+                $users[$i]['auth'] = implode(',', $auth_tmp_arr);
+            }
+        }
+        return $users;
+    }
+
+
+    /**
+     *  更新用户的权限或者删除用户
+    **/
+    public static function updateRoot($userName, $auth_arr){
+        // 连接数据库
+        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.write');
+        $instance = Comm_Db_Handler::getInstance(self::db, $config);
+        // 如果auth_arr为空，则删除用户,但是用户不一定存在; 否则，如果用户存在，更新权限 不存在则新建用户
+        if(count($auth_arr) == 0){
+            $ret = $instance->delete('root',array('username'=>$userName));
+            if($ret){
+                return "删除成功！";
+            }else{
+                return "删除用户不存在，无需删除！";
+            }
+        }else{
+            // 先获取权限数量，如果auth_arr的大小等于所有权限的数量，则将数据库中的auth置为*
+            $auth_count = count(Comm_Config::getPhpConf('auth.auth'));
+            $auth = ($auth_count == count($auth_arr)) ? '*' : implode(',', $auth_arr);
+            $ret = $instance->select('root',array('id'),array('username'=>$userName))[0];
+            // 存在，则更新权限
+            if($ret){
+                $ret2 = $instance->update('root',array("auth"=>$auth),array('username'=>$userName));
+                if($ret2){
+                    return "更新用户“".$userName."”权限成功！";
+                }else{
+                    return "更新用户“".$userName."”权限失败！";
+                }
+            }else{  // 不存在，则创建用户，默认密码是123qwe，同时设置权限
+                // 初始密码
+                $salt = Comm_Config::getPhpConf('auth.salt'); //盐值
+                $password = Comm_Config::getPhpConf('auth.init_password'); //初始密码
+                $password = sha1(sha1($password).$salt);
+                $ret3 = $instance->insert('root',array('username'=>$userName,'password'=>$password,'auth'=>$auth,'excutor'=>$_COOKIE['user']));
+                if($ret3){
+                    return "添加管理员成功！";
+                }else{
+                    return "添加管理员失败！";
+                }
+            }
+        }
+    }
 }

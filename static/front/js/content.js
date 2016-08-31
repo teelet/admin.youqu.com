@@ -77,10 +77,14 @@ $(function () {
 
     // 修改权限
     $(".authTable #addAuth").click(function(){
+        return check();
+    });
+
+    function check(){
         var user = $(".authTable #add_mailbox").val();
         if(user == ""){
             alert("用户名不能为空！");
-            return;
+            return false;
         }
         var selected = new Array();
         $("#authModify input[type=checkbox]").each(function(){
@@ -91,15 +95,16 @@ $(function () {
         var len = selected.length;
         var msg = "";
         if(len == 0){
-            msg = "确认修改账号 "+user+" 的权限为空？";
+            msg = "未选择任何权限，将删除账号 "+user+" ，是否继续？";
         }else{
             var auth = selected.join(",");
             msg = "确认修改账号 "+user+" 的权限为 “"+auth+"” ？";
         }
         if(!confirm(msg)){
-            e.preventDefault();
+            return false;
         }
-    });
+        return true;
+    }
 
     $(".selectPrevCheckbox").click(function(){
         var chk = $(this).prev("input[type=checkbox]");
@@ -110,5 +115,8 @@ $(function () {
             chk.prop("checked",true);
         }
     });
+
+    // 设置res_msg 自动隐藏
+    $("#res_msg").hide(3000);
 
 });

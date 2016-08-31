@@ -8,6 +8,7 @@
 return array(
 
     'salt' => 'youqu_salt', //用户密码盐值
+    'init_password' => '123qwe', // 初始密码
 
     'class' => array( // 类目
         '1000' => '内容管理',

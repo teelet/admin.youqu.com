@@ -12,32 +12,35 @@
 </head>
 <body>
 <div class="content">
+    <div id="res_msg" style="color:#008ead;margin-left: 10px;font-size: 14px;"><?=$res_msg?></div>
     <div class="common_box">
         <div class="zone1">
             <h2>更新管理员权限</h2>
-            <table class="table authTable" id="authModify">
-                <tr>
-                    <td width="15%">管理员:</td>
-                    <td><input type="text" name="add_mailbox" id="add_mailbox" placeholder="用户名" /></td>
-                </tr>
-                <tr>
-                    <td >选择权限:</td>
-                    <td class="checkbox_td">
-                        <?php
-                            foreach ($auth as $key => $value):
-                        ?>
-                                <input type="checkbox" value="<?=$key?>"/><label class="selectPrevCheckbox"><?=$value['authName']?></label>
-                        <?php
-                            endforeach;
-                        ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="addAuth" class="submit float_input" id="addAuth" value="操作"/>
-                    </td>
-                </tr>
-            </table>
+            <form action="/Authmanage/updateRoot" method="post">
+                <table class="table authTable" id="authModify">
+                    <tr>
+                        <td width="15%">管理员:</td>
+                        <td><input type="text" name="username" id="add_mailbox" placeholder="用户名" /></td>
+                    </tr>
+                    <tr>
+                        <td >选择权限:</td>
+                        <td class="checkbox_td">
+                            <?php
+                                foreach ($auth as $key => $value):
+                            ?>
+                                    <input type="checkbox" value="<?=$key?>" name="auth[]"/><label class="selectPrevCheckbox"><?=$value['authName']?></label>
+                            <?php
+                                endforeach;
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit"  class="submit float_input" id="addAuth" value="操作"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 
@@ -46,17 +49,19 @@
             <h2>管理员列表</h2>
             <table class="table authTable listTable">
                 <tr>
-                    <th>邮箱</th>
-                    <th>密码</th>
+                    <th>用户名</th>
+                    <th>权限</th>
                     <th>执行者</th>
                     <th>添加时间</th>
                 </tr>
-                <tr>
-                    <td>yangfan13</td>
-                    <td>123456</td>
-                    <td>shimin1</td>
-                    <td>2016-02-01 12:06:48</td>
-                </tr>
+                <?php foreach($roots as $v):?>
+                    <tr>
+                        <td><?=$v["username"]?></td>
+                        <td><?=$v["auth"]?></td>
+                        <td><?=$v["excutor"]?></td>
+                        <td><?=$v["atime"]?></td>
+                    </tr>
+                <?php endforeach;?>
             </table>
         </div>
     </div>
