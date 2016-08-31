@@ -28,7 +28,7 @@ class AuthmanageController extends AbstractController {
     	}
     	$this->tpl = 'authManage.phtml';
 
-    	$user = Comm_Context::form("username","");
+    	$user = trim(Comm_Context::form("username",""));
     	$auth_arr = Comm_Context::form("auth",array());
         if($user == 'root'){
             echo "非法提交!";
