@@ -86,6 +86,10 @@ $(function () {
             alert("用户名不能为空！");
             return false;
         }
+        if(user == "root"){
+            alert("不可操作root用户！");
+            return false;
+        }
         var selected = new Array();
         $("#authModify input[type=checkbox]").each(function(){
             if($(this).is(":checked")){
