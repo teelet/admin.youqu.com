@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7366430-4fcc-4245-9706-3381c21f4e66" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/content.js" afterPath="$PROJECT_DIR$/static/front/js/content.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/login.js" afterPath="$PROJECT_DIR$/static/front/js/login.js" />
     </list>
     <ignored path="youqu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,28 +34,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="content.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/front/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+            <state relative-caret-position="135">
+              <caret line="83" column="60" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="60" />
               <folding>
-                <marker date="1472640041000" expanded="true" signature="1766:1772" ph=" " />
-                <marker date="1472640041000" expanded="true" signature="1837:1843" ph=" " />
-                <marker date="1472640041000" expanded="true" signature="1843:1849" ph=" " />
-                <marker date="1472640041000" expanded="true" signature="2780:2786" ph=" " />
-                <marker date="1472640041000" expanded="true" signature="2825:2831" ph=" " />
-                <marker date="1472640041000" expanded="true" signature="2831:2837" ph=" " />
+                <marker date="1472640377000" expanded="true" signature="1766:1772" ph=" " />
+                <marker date="1472640377000" expanded="true" signature="1837:1843" ph=" " />
+                <marker date="1472640377000" expanded="true" signature="1843:1849" ph=" " />
+                <marker date="1472640377000" expanded="true" signature="2780:2786" ph=" " />
+                <marker date="1472640377000" expanded="true" signature="2825:2831" ph=" " />
+                <marker date="1472640377000" expanded="true" signature="2831:2837" ph=" " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/front/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="34" column="74" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="74" />
+            <state relative-caret-position="214">
+              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -103,7 +104,6 @@
         <option value="$PROJECT_DIR$/conf/auth.ini" />
         <option value="$PROJECT_DIR$/static/front/css/login.css" />
         <option value="$PROJECT_DIR$/application/controllers/Abstract.php" />
-        <option value="$PROJECT_DIR$/static/front/js/login.js" />
         <option value="$PROJECT_DIR$/conf/auth.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/views/authManage.phtml" />
@@ -119,6 +119,7 @@
         <option value="$PROJECT_DIR$/application/views/main.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Authmanage.php" />
         <option value="$PROJECT_DIR$/static/front/js/content.js" />
+        <option value="$PROJECT_DIR$/static/front/js/login.js" />
       </list>
     </option>
   </component>
@@ -411,12 +412,12 @@
       <workItem from="1472453319025" duration="13596000" />
       <workItem from="1472539085000" duration="4216000" />
       <workItem from="1472543523056" duration="14832000" />
-      <workItem from="1472636570556" duration="3032000" />
+      <workItem from="1472636570556" duration="3245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93515000" />
+    <option name="totallyTimeSpent" value="93728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -815,26 +816,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/front/js/login.js">
+    <entry file="file://$PROJECT_DIR$/static/front/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="34" column="74" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="74" />
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="83" column="60" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="60" />
+          <folding>
+            <marker date="1472640377000" expanded="true" signature="1766:1772" ph=" " />
+            <marker date="1472640377000" expanded="true" signature="1837:1843" ph=" " />
+            <marker date="1472640377000" expanded="true" signature="1843:1849" ph=" " />
+            <marker date="1472640377000" expanded="true" signature="2780:2786" ph=" " />
+            <marker date="1472640377000" expanded="true" signature="2825:2831" ph=" " />
+            <marker date="1472640377000" expanded="true" signature="2831:2837" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/front/js/content.js">
+    <entry file="file://$PROJECT_DIR$/static/front/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
-          <folding>
-            <marker date="1472640041000" expanded="true" signature="1766:1772" ph=" " />
-            <marker date="1472640041000" expanded="true" signature="1837:1843" ph=" " />
-            <marker date="1472640041000" expanded="true" signature="1843:1849" ph=" " />
-            <marker date="1472640041000" expanded="true" signature="2780:2786" ph=" " />
-            <marker date="1472640041000" expanded="true" signature="2825:2831" ph=" " />
-            <marker date="1472640041000" expanded="true" signature="2831:2837" ph=" " />
-          </folding>
+        <state relative-caret-position="214">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>

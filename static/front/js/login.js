@@ -32,13 +32,13 @@ $(function(){
     $('.but_a').click(function () {
         $('#checkMsg').text('');
         //验证用户名,密码是否为空
-        var username = $('#username').val().replace(/(^\s*)|(\s*$)/g, "");
+        var username = $('#username').val().trim();
         if(username == ''){
             $('#checkMsg').text('用户名不能为空!');
             $('#username').focus();
             return false;
         }
-        var passwrod = $('#password').val().replace(/(^\s*)|(\s*$)/g, "");
+        var passwrod = $('#password').val().trim();
         if(passwrod == ''){
             $('#checkMsg').text('密码不能为空!');
             $('#password').focus();
