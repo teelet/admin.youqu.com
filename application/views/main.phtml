@@ -29,7 +29,7 @@
                         foreach ($auth as $key => $item):
                             if(count($item) == 1):
                 ?>
-                                <li><a href="<?=$item[0]['url']?>" target="main_show"><?=$class[$key]?></a><input type="hidden" value="<?=$class[$key]?>"></li>
+                                <li><a href="<?=$item[0]['url']?>" target="main_show"><?=$item[0]['authName']?></a><input type="hidden" value="<?=$item[0]['authName']?>"></li>
 
                 <?php
                             else:
@@ -67,7 +67,22 @@
             </ul>
         </div>
         <div class="right">
-            <div>当前位置: &nbsp;&nbsp;&nbsp;&nbsp;<a class="user_position"><b>内容管理</b></a></div>
+            <div>当前位置: &nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="user_position">
+                    <b>
+                        <?php
+                            $firstItem = array_slice($auth, 0, 1)[0][0];
+                            if(count($auth) == 1){
+                                echo $firstItem['authName'];
+                            }else{
+                                $firstKey = array_slice(array_keys($auth), 0, 1)[0];
+                                $route = array_unique(array($class[$firstKey], $firstItem['authName']));
+                                echo implode(' > ', $route);
+                            }
+                        ?>
+                    </b>
+                </a>
+            </div>
             <div>
                 <iframe id="iframepage" name="main_show" src="/contentManage" frameborder="0" marginheight="0" marginwidth="0"></iframe>
             </div>

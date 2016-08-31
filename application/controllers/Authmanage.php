@@ -23,14 +23,17 @@ class AuthmanageController extends AbstractController {
 
     public function updateRootAction(){
     	if(empty($_POST)){
-    		echo "非法提交";
+    		echo "非法提交!";
     		die;
     	}
     	$this->tpl = 'authManage.phtml';
 
     	$user = Comm_Context::form("username","");
     	$auth_arr = Comm_Context::form("auth",array());
-
+        if($user == 'root'){
+            echo "非法提交!";
+            die;
+        }
     	$res_msg = User_UserModel::updateRoot($user,$auth_arr);
 
         $this->data['auth'] = Comm_Config::getPhpConf('auth.auth');
