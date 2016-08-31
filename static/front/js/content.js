@@ -81,7 +81,7 @@ $(function () {
     });
 
     function check(){
-        var user = $(".authTable #add_mailbox").val();
+        var user = $(".authTable #add_mailbox").val().replace(/(^\s*)|(\s*$)/g, "");
         if(user == ""){
             alert("用户名不能为空！");
             return false;
