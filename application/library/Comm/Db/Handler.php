@@ -13,7 +13,21 @@ class Comm_Db_Handler {
         if(isset(self::$instances[$DbName])){
             return self::$instances[$DbName];
         }else{
-            self::$instances[$DbName] = new Comm_Db_Mysql($config);
+            $medoo_conf = array(
+                // 必须配置项
+                'database_type' => 'mysql',
+                'database_name' => $config['dbname'],
+                'server'        => $config['host'],
+                'username'      => $config['user'],
+                'password'      => $config['passwd'],
+                'charset'       => 'utf8',
+                'port' => $config['port'],
+                'option' => array( // 连接参数扩展
+                    PDO::ATTR_CASE => PDO::CASE_NATURAL
+                )
+            );
+            self::$instances[$DbName] = new Comm_Db_Medoo($medoo_conf);
+
             return self::$instances[$DbName];
         }
     }
