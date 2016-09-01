@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7366430-4fcc-4245-9706-3381c21f4e66" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Authmanage.php" afterPath="$PROJECT_DIR$/application/controllers/Authmanage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/User/User.php" afterPath="$PROJECT_DIR$/application/models/User/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/authManage.phtml" afterPath="$PROJECT_DIR$/application/views/authManage.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login.phtml" afterPath="$PROJECT_DIR$/application/views/login.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/content.css" afterPath="$PROJECT_DIR$/static/front/css/content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/contentManage.css" afterPath="$PROJECT_DIR$/static/front/css/contentManage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/content.js" afterPath="$PROJECT_DIR$/static/front/js/content.js" />
     </list>
     <ignored path="youqu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,23 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Authmanage.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Authmanage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Authmanage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+            <state relative-caret-position="340">
+              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding>
                 <element signature="e#6#72#0#PHP" expanded="true" />
+                <marker date="1472707516000" expanded="true" signature="1008:1058" ph="..." />
+                <marker date="1472707516000" expanded="true" signature="1008:1076" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/login.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+            <state relative-caret-position="465">
+              <caret line="31" column="72" selection-start-line="31" selection-start-column="72" selection-end-line="31" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -84,8 +80,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="75" column="105" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="105" />
+            <state relative-caret-position="353">
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
               <folding>
                 <element signature="e#6#75#0#PHP" expanded="true" />
               </folding>
@@ -160,12 +156,12 @@
         <option value="$PROJECT_DIR$/static/front/js/login.js" />
         <option value="$PROJECT_DIR$/static/front/css/contentManage.css" />
         <option value="$PROJECT_DIR$/static/front/css/content.css" />
-        <option value="$PROJECT_DIR$/application/controllers/Authmanage.php" />
         <option value="$PROJECT_DIR$/application/library/Comm/Db/Medoo.php" />
-        <option value="$PROJECT_DIR$/application/models/User/User.php" />
         <option value="$PROJECT_DIR$/application/views/authManage.phtml" />
         <option value="$PROJECT_DIR$/static/front/js/content.js" />
         <option value="$PROJECT_DIR$/application/views/login.phtml" />
+        <option value="$PROJECT_DIR$/application/models/User/User.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Authmanage.php" />
       </list>
     </option>
   </component>
@@ -405,12 +401,12 @@
       <workItem from="1472453319025" duration="13596000" />
       <workItem from="1472539085000" duration="4216000" />
       <workItem from="1472543523056" duration="14832000" />
-      <workItem from="1472636570556" duration="8613000" />
+      <workItem from="1472636570556" duration="9535000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99096000" />
+    <option name="totallyTimeSpent" value="100018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="87" y="39" width="1047" height="709" extended-state="0" />
@@ -793,26 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Authmanage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-          <folding>
-            <element signature="e#6#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="75" column="105" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="105" />
-          <folding>
-            <element signature="e#6#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -860,9 +836,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+        <state relative-caret-position="465">
+          <caret line="31" column="72" selection-start-line="31" selection-start-column="72" selection-end-line="31" selection-end-column="72" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="e#6#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Authmanage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+          <folding>
+            <element signature="e#6#72#0#PHP" expanded="true" />
+            <marker date="1472707516000" expanded="true" signature="1008:1058" ph="..." />
+            <marker date="1472707516000" expanded="true" signature="1008:1076" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -25,20 +25,24 @@ class AuthmanageController extends AbstractController {
             echo "非法提交!";
             die;
         }
-        $this->tpl = 'authManage.phtml';
         $user = trim(Comm_Context::form("username",""));
+        $loginUser = $_COOKIE['user'];
         $password = trim(Comm_Context::form("password",''));
         if($user == 'root'){
-            $loginUser = $_COOKIE['user'];
             if($loginUser != $user){
                 echo "非法提交!";
                 die;
             }
         }
         $res_msg = User_UserModel::updatePassword($user, $password);
+        if($res_msg['status'] == 0 && $user == $loginUser){ //重新登录
+            echo '<script>alert("修改成功,请重新登录");window.parent.location.href = "/login";</script>';
+        }
+
+        $this->tpl = 'authManage.phtml';
         $this->data['auth'] = Comm_Config::getPhpConf('auth.auth');
         $this->data['roots'] = User_UserModel::getAllRoot();
-        $this->data['res_msg'] = $res_msg;
+        $this->data['res_msg'] = $res_msg['msg'];
         $this->assign();
         return $this->end();
     }

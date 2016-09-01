@@ -75,9 +75,15 @@ class User_UserModel {
         $instance = Comm_Db_Handler::getInstance(self::db, $config);
         $res = $instance->update('root', array('password' => $password), array('username' => $userName));
         if($res){
-            return "更新管理员密码成功！";
+            return array(
+                'status' => 0,
+                'msg'    => '更新管理员密码成功！'
+            );
         }else{
-            return "更新管理员密码失败！";
+            return array(
+                'status' => 1,
+                'msg'    => '更新管理员密码失败！'
+            );
         }
     }
 
