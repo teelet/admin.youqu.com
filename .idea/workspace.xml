@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7366430-4fcc-4245-9706-3381c21f4e66" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Authmanage.php" afterPath="$PROJECT_DIR$/application/controllers/Authmanage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/User/User.php" afterPath="$PROJECT_DIR$/application/models/User/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/authManage.phtml" afterPath="$PROJECT_DIR$/application/views/authManage.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login.phtml" afterPath="$PROJECT_DIR$/application/views/login.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/content.css" afterPath="$PROJECT_DIR$/static/front/css/content.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/css/contentManage.css" afterPath="$PROJECT_DIR$/static/front/css/contentManage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/content.js" afterPath="$PROJECT_DIR$/static/front/js/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/front/js/login.js" afterPath="$PROJECT_DIR$/static/front/js/login.js" />
     </list>
     <ignored path="youqu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,9 +33,33 @@
       <file leaf-file-name="Authmanage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Authmanage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+            <state relative-caret-position="355">
+              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+              <folding>
+                <element signature="e#6#72#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/login.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authManage.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/authManage.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,26 +67,42 @@
       <file leaf-file-name="content.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/front/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="83" column="60" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="60" />
+            <state relative-caret-position="502">
+              <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
               <folding>
-                <marker date="1472640377000" expanded="true" signature="1766:1772" ph=" " />
-                <marker date="1472640377000" expanded="true" signature="1837:1843" ph=" " />
-                <marker date="1472640377000" expanded="true" signature="1843:1849" ph=" " />
-                <marker date="1472640377000" expanded="true" signature="2780:2786" ph=" " />
-                <marker date="1472640377000" expanded="true" signature="2825:2831" ph=" " />
-                <marker date="1472640377000" expanded="true" signature="2831:2837" ph=" " />
+                <marker date="1472700782000" expanded="true" signature="1766:1772" ph=" " />
+                <marker date="1472700782000" expanded="true" signature="1837:1843" ph=" " />
+                <marker date="1472700782000" expanded="true" signature="1843:1849" ph=" " />
+                <marker date="1472700782000" expanded="true" signature="2780:2786" ph=" " />
+                <marker date="1472700782000" expanded="true" signature="2825:2831" ph=" " />
+                <marker date="1472700782000" expanded="true" signature="2831:2837" ph=" " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/front/js/login.js">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="323">
+              <caret line="75" column="105" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="105" />
+              <folding>
+                <element signature="e#6#75#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Medoo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/library/Comm/Db/Medoo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="181" column="40" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+              <folding>
+                <element signature="e#6#80#0#PHP" expanded="true" />
+                <marker date="1472698905000" expanded="true" signature="24997:25117" ph="INSERT INTO ${$this-&gt;table_quote($table)}... " />
+                <marker date="1472698905000" expanded="true" signature="27033:27045" ph="DELETE FROM " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,8 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/modules/Internal/controllers/Home/getImgToken.php" />
-        <option value="$PROJECT_DIR$/application/modules/Internal/controllers/Home/getImageToken.php" />
         <option value="$PROJECT_DIR$/application/modules/Internal/controllers/Home/GetImageToken.php" />
         <option value="$PROJECT_DIR$/application/library/Qiniu/Image.php" />
         <option value="$PROJECT_DIR$/conf/sprintf.ini" />
@@ -106,20 +150,22 @@
         <option value="$PROJECT_DIR$/application/controllers/Abstract.php" />
         <option value="$PROJECT_DIR$/conf/auth.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/application/views/authManage.phtml" />
         <option value="$PROJECT_DIR$/application/library/Comm/Db/Mysql.php" />
         <option value="$PROJECT_DIR$/application/library/Comm/Db/Pdo.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ajax/Checklogin.php" />
-        <option value="$PROJECT_DIR$/application/library/Comm/Db/Medoo.php" />
-        <option value="$PROJECT_DIR$/application/models/User/User.php" />
         <option value="$PROJECT_DIR$/application/library/Comm/Db/Handler.php" />
-        <option value="$PROJECT_DIR$/application/views/login.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Login.php" />
         <option value="$PROJECT_DIR$/application/controllers/Index.php" />
         <option value="$PROJECT_DIR$/application/views/main.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/Authmanage.php" />
-        <option value="$PROJECT_DIR$/static/front/js/content.js" />
         <option value="$PROJECT_DIR$/static/front/js/login.js" />
+        <option value="$PROJECT_DIR$/static/front/css/contentManage.css" />
+        <option value="$PROJECT_DIR$/static/front/css/content.css" />
+        <option value="$PROJECT_DIR$/application/controllers/Authmanage.php" />
+        <option value="$PROJECT_DIR$/application/library/Comm/Db/Medoo.php" />
+        <option value="$PROJECT_DIR$/application/models/User/User.php" />
+        <option value="$PROJECT_DIR$/application/views/authManage.phtml" />
+        <option value="$PROJECT_DIR$/static/front/js/content.js" />
+        <option value="$PROJECT_DIR$/application/views/login.phtml" />
       </list>
     </option>
   </component>
@@ -134,8 +180,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="87" />
+    <option name="y" value="39" />
+    <option name="width" value="1047" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -212,60 +260,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin.youqu.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin.youqu.com" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin.youqu.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin.youqu.com" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin.youqu.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin.youqu.com" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -284,7 +278,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -300,7 +294,6 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -412,18 +405,18 @@
       <workItem from="1472453319025" duration="13596000" />
       <workItem from="1472539085000" duration="4216000" />
       <workItem from="1472543523056" duration="14832000" />
-      <workItem from="1472636570556" duration="3245000" />
+      <workItem from="1472636570556" duration="8613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93728000" />
+    <option name="totallyTimeSpent" value="99096000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="87" y="39" width="1047" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20759289" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3233831" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879376" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -481,9 +474,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.buildpath" />
-    <entry file="file://$PROJECT_DIR$/.project" />
-    <entry file="file://$PROJECT_DIR$/application/controllers/Test/Test.php" />
     <entry file="file://$PROJECT_DIR$/php-yaf-doc/yaf.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -590,6 +580,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="9" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -598,13 +589,6 @@
         <state relative-caret-position="450">
           <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/library/Comm/Context.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -707,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/authManage.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/library/Comm/Db/Pdo.php" />
     <entry file="file://$PROJECT_DIR$/application/library/Comm/Db/Mysql.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -726,13 +703,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/library/Comm/Db/Medoo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="153" column="5" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -750,28 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding>
-            <element signature="e#6#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -784,26 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
           <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Authmanage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -816,25 +753,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/front/js/content.js">
+    <entry file="file://$PROJECT_DIR$/static/front/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="83" column="60" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="60" />
+        <state relative-caret-position="600">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/library/Comm/Context.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/front/css/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/front/css/contentManage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Authmanage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
           <folding>
-            <marker date="1472640377000" expanded="true" signature="1766:1772" ph=" " />
-            <marker date="1472640377000" expanded="true" signature="1837:1843" ph=" " />
-            <marker date="1472640377000" expanded="true" signature="1843:1849" ph=" " />
-            <marker date="1472640377000" expanded="true" signature="2780:2786" ph=" " />
-            <marker date="1472640377000" expanded="true" signature="2825:2831" ph=" " />
-            <marker date="1472640377000" expanded="true" signature="2831:2837" ph=" " />
+            <element signature="e#6#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/front/js/login.js">
+    <entry file="file://$PROJECT_DIR$/application/models/User/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        <state relative-caret-position="323">
+          <caret line="75" column="105" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="105" />
+          <folding>
+            <element signature="e#6#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="772" column="20" selection-start-line="772" selection-start-column="20" selection-end-line="772" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/library/Comm/Db/Medoo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="181" column="40" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1472698905000" expanded="true" signature="24997:25117" ph="INSERT INTO ${$this-&gt;table_quote($table)}... " />
+            <marker date="1472698905000" expanded="true" signature="27033:27045" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/authManage.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/front/js/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
+          <folding>
+            <marker date="1472700782000" expanded="true" signature="1766:1772" ph=" " />
+            <marker date="1472700782000" expanded="true" signature="1837:1843" ph=" " />
+            <marker date="1472700782000" expanded="true" signature="1843:1849" ph=" " />
+            <marker date="1472700782000" expanded="true" signature="2780:2786" ph=" " />
+            <marker date="1472700782000" expanded="true" signature="2825:2831" ph=" " />
+            <marker date="1472700782000" expanded="true" signature="2831:2837" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
           <folding />
         </state>
       </provider>

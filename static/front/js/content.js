@@ -75,6 +75,23 @@ $(function () {
         location.href = "/contentManage";
     });
 
+    // 修改密码
+    $(".authTable #changePasswd").click(function(){
+        var user = $(".authTable #change_mailbox").val().trim();
+        if(user == ""){
+            alert("用户名不能为空！");
+            return false;
+        }
+        var password = $(".authTable #passwd_show").val().trim();
+        if(password == ""){
+            alert("密码不能为空！");
+            return false;
+        }
+        $(".authTable #passwd_hidden").val($.sha1(password))
+        return true;
+
+    });
+
     // 修改权限
     $(".authTable #addAuth").click(function(){
         return check();
@@ -121,6 +138,9 @@ $(function () {
     });
 
     // 设置res_msg 自动隐藏
-    $("#res_msg").hide(3000);
+    if($("#res_msg").text() != ""){
+        $("#res_msg").slideDown();
+        $("#res_msg").slideUp(1500);
+    }
 
 });

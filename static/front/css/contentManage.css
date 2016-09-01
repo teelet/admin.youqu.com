@@ -28,7 +28,7 @@ body{
 .holder{
     height: 10px;
 }
-input, textarea{
+input, textarea, .passwd_show{
     border: 1px solid lightgrey;
     background-color: #F8F8FF;
     -webkit-border-radius:3px;

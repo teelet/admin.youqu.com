@@ -139,6 +139,11 @@ button[name=search]{
     margin: 10px 20px 0px 10px;
 	height: 25px;
 }
+.authTable input[type=password]{
+	border: 1px solid #e1e0e0;
+	margin: 10px 20px 0px 10px;
+	height: 25px;
+}
 .authTable input[type=submit]{
 	width: 80px;
 	cursor: pointer;

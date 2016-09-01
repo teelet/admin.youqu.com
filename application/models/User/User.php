@@ -41,7 +41,7 @@ class User_UserModel {
     **/
     public static function getAllRoot(){
         // 连接数据库
-        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.write');
+        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.read');
         $instance = Comm_Db_Handler::getInstance(self::db, $config);
         $users = $instance->select('root',array("username","auth","atime","excutor"),array());
         // 得到所有的auth
@@ -59,6 +59,26 @@ class User_UserModel {
             }
         }
         return $users;
+    }
+
+    /**
+     * 更新管理员密码
+     */
+    public static function updatePassword($userName, $password){
+        if(empty($userName) || empty($password)){
+            return false;
+        }
+        $salt = Comm_Config::getPhpConf('auth.salt'); //盐值
+        $password = sha1($password.$salt);
+        // 连接数据库
+        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.write');
+        $instance = Comm_Db_Handler::getInstance(self::db, $config);
+        $res = $instance->update('root', array('password' => $password), array('username' => $userName));
+        if($res){
+            return "更新管理员密码成功！";
+        }else{
+            return "更新管理员密码失败！";
+        }
     }
 
 

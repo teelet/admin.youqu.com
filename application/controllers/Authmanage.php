@@ -20,6 +20,29 @@ class AuthmanageController extends AbstractController {
         return $this->end();
     }
 
+    public function updatePasswdAction(){
+        if(empty($_POST)){
+            echo "非法提交!";
+            die;
+        }
+        $this->tpl = 'authManage.phtml';
+        $user = trim(Comm_Context::form("username",""));
+        $password = trim(Comm_Context::form("password",''));
+        if($user == 'root'){
+            $loginUser = $_COOKIE['user'];
+            if($loginUser != $user){
+                echo "非法提交!";
+                die;
+            }
+        }
+        $res_msg = User_UserModel::updatePassword($user, $password);
+        $this->data['auth'] = Comm_Config::getPhpConf('auth.auth');
+        $this->data['roots'] = User_UserModel::getAllRoot();
+        $this->data['res_msg'] = $res_msg;
+        $this->assign();
+        return $this->end();
+    }
+
 
     public function updateRootAction(){
     	if(empty($_POST)){
@@ -28,7 +51,7 @@ class AuthmanageController extends AbstractController {
     	}
     	$this->tpl = 'authManage.phtml';
 
-    	$user = Comm_Context::form("username","");
+    	$user = trim(Comm_Context::form("username",""));
     	$auth_arr = Comm_Context::form("auth",array());
         if($user == 'root'){
             echo "非法提交!";
