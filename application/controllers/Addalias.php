@@ -73,12 +73,15 @@ class AddaliasController extends AbstractController {
 			echo '标签不存在!';
 			die ();
 		}
-		$res_msg = Tag_AliasModel::insertAlias ( $tag, $alias_name );
+		$res = Tag_AliasModel::insertAlias ( $tag, $alias_name );
+		if (! $res) {
+			echo '添加别名失败!';
+			die ();
+		}
 		$tag_list = Tag_TagModel::addAliasIndex ();
 		$this->tpl = 'addAlias.phtml';
 		$this->data ['tag_list'] = json_encode ( $tag_list );
 		$this->data ['tag_id'] = $tag_id;
-		$this->data ['res_msg'] = $res_msg;
 		$this->assign ();
 		return $this->end ();
 	}

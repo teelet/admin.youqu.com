@@ -23,6 +23,32 @@ class Tag_TagModel {
 		return $tag [0];
 	}
 	/**
+	 * 插入新的标签
+	 *
+	 * @param unknown $parent_tag_id        	
+	 * @param unknown $tag_name        	
+	 * @param unknown $tag_level        	
+	 */
+	public static function insertTag($parent_tag_id, $tag_name, $tag_level) {
+		// 获取数据库配置文件
+		$config = Comm_Config::getPhpConf ( 'db/db.' . self::db . '.write' );
+		$instance = Comm_Db_Handler::getInstance ( self::db, $config );
+		$gid = 0;
+		$type = 0;
+		if ($tag_level == 2) {
+			$gid = $parent_tag_id;
+		} elseif ($tag_level == 3) {
+			$type = $parent_tag_id;
+		}
+		$ret = $instance->insert ( 'tag', array (
+				'name' => $tag_name,
+				'gid' => $gid,
+				'level' => $tag_level,
+				'type' => $type 
+		) );
+		return $ret;
+	}
+	/**
 	 * 根据标签的级别查询标签列表，按时间递减
 	 *
 	 * @param unknown $level        	
@@ -121,6 +147,95 @@ class Tag_TagModel {
 			$new_level1_list [$v ['up_level']] ['s'] [] = $v;
 		}
 		return array_values ( $new_level1_list );
+	}
+	/**
+	 * 添加标签中的层级关系
+	 *
+	 * @param unknown $leve1_list        	
+	 * @param unknown $level2_list        	
+	 * @param unknown $level3_list        	
+	 */
+	public static function trans2level4AddTag() {
+		$level_list = array (
+				array (
+						'v' => 1,
+						'n' => '一级标签',
+						's' => array (
+								array (
+										'v' => 0,
+										'n' => '选择游戏',
+										's' => array (
+												array (
+														'v' => 0,
+														'n' => '选择二级标签' 
+												) 
+										) 
+								) 
+						) 
+				),
+				array (
+						'v' => 2,
+						'n' => '二级标签',
+						's' => array (
+								array (
+										'v' => 0,
+										'n' => '选择游戏',
+										's' => array (
+												array (
+														'v' => 0,
+														'n' => '选择二级标签' 
+												) 
+										) 
+								) 
+						) 
+				),
+				array (
+						'v' => 3,
+						'n' => '三级标签',
+						's' => array (
+								array (
+										'v' => 0,
+										'n' => '选择游戏',
+										's' => array (
+												array (
+														'v' => 0,
+														'n' => '选择二级标签' 
+												) 
+										) 
+								) 
+						) 
+				) 
+		);
+		// 选择第一层的列表
+		$level1_list = Tag_TagModel::getTagListByLevel ( 1 );
+		// 选择第二层的列表
+		$level2_list = Tag_TagModel::getTagListByLevel ( 2 );
+		$new_level1_list = array ();
+		foreach ( $level1_list as $v ) {
+			$new_level1_list [$v ['tid']] = array (
+					'v' => $v ['tid'],
+					'n' => $v ['name'],
+					'level' => $v ['level'],
+					'up_level' => $v ['gid'],
+					's' => array (
+							array (
+									'v' => 0,
+									'n' => '选择二级标签' 
+							) 
+					) 
+			);
+		}
+		$level_list [1] ['s'] = array_merge ( $level_list [1] ['s'], $new_level1_list );
+		foreach ( $level2_list as $v ) {
+			$new_level1_list [$v ['gid']] ['s'] [] = array (
+					'v' => $v ['tid'],
+					'n' => $v ['name'],
+					'level' => $v ['level'],
+					'up_level' => $v ['gid'] 
+			);
+		}
+		$level_list [2] ['s'] = array_merge ( $level_list [2] ['s'], $new_level1_list );
+		return array_values ( $level_list );
 	}
 	/**
 	 * 查询别名列表

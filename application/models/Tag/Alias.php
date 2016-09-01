@@ -44,10 +44,6 @@ class Tag_AliasModel {
 				'display_name' => $tag ['name'],
 				'alias' => $alias_name 
 		) );
-		if ($ret) {
-			return "添加别名成功！";
-		} else {
-			return "添加别名失败！";
-		}
+		return $ret;
 	}
 }
