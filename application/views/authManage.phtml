@@ -14,6 +14,9 @@
 <body>
 <div class="content">
     <div id="res_msg" style="display: none;text-align: center;color:#008ead;margin: 5px auto;font-size: 18px;"><?=$res_msg?></div>
+    <?php
+    if($_COOKIE['user'] == 'root'):
+    ?>
     <div class="common_box">
         <div class="zone1">
             <h2>更新管理员权限</h2>
@@ -70,7 +73,9 @@
             </form>
         </div>
     </div>
-
+    <?php
+    endif;
+    ?>
     <div class="common_box">
         <div class="zone2">
             <h2>管理员列表</h2>

@@ -29,17 +29,10 @@ class Tag_TagModel {
 	 * @param unknown $tag_name        	
 	 * @param unknown $tag_level        	
 	 */
-	public static function insertTag($parent_tag_id, $tag_name, $tag_level) {
+	public static function insertTag($tag_name, $tag_level, $gid, $type) {
 		// 获取数据库配置文件
 		$config = Comm_Config::getPhpConf ( 'db/db.' . self::db . '.write' );
 		$instance = Comm_Db_Handler::getInstance ( self::db, $config );
-		$gid = 0;
-		$type = 0;
-		if ($tag_level == 2) {
-			$gid = $parent_tag_id;
-		} elseif ($tag_level == 3) {
-			$type = $parent_tag_id;
-		}
 		$ret = $instance->insert ( 'tag', array (
 				'name' => $tag_name,
 				'gid' => $gid,
