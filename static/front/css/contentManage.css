@@ -101,3 +101,25 @@ input[name=tag_name], input[name=alias_name]{
     margin-left: 11px;
     margin-right: 22px;
 }
+.search_div_form{
+    text-align: left;
+    margin-left:20px;
+}
+.search_div_form form{
+    margin: 10px 0px 0px 20px;
+}
+.search_div_form .submit{
+    margin-left: 0px;
+    cursor: pointer;
+}
+.search_div_form .res_msg{
+    margin: 10px 20px;
+    padding: 10px;
+    color: #008ead;
+    font-size: 14px;
+    border: 1px solid #008ead;
+    border-radius: 4px;
+}
+.search_div_form .res_msg .info{
+    font-weight: bold;
+}

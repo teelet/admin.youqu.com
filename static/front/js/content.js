@@ -142,5 +142,6 @@ $(function () {
         $("#res_msg").slideDown();
         $("#res_msg").slideUp(1500);
     }
+    
 
 });

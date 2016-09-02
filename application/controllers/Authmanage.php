@@ -51,6 +51,7 @@ class AuthmanageController extends AbstractController {
         $this->data['res_msg'] = $res_msg['msg'];
 
         $this->indexAction();
+        return $this->end();
     }
 
 
@@ -70,6 +71,7 @@ class AuthmanageController extends AbstractController {
         $this->data['res_msg'] = $res_msg;
 
         $this->indexAction();
+        return $this->end();
     }
 
 

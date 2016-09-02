@@ -10,13 +10,17 @@
 </head>
 <body>
 <div class="common_box">
-    <div class="search_div">
+    <div class="search_div_form">
         <div class="holder"></div>
-        <form action="" method="get">
-            内容url:
-            <input type="text" name="content_url" placeholder="请提供要抓取内容的url地址"/>
+        <form action="/Addarticle/handler" method="post">
+            <span>内容url:</span>
+            <input type="text" name="content_url" placeholder="请提供要抓取内容的url地址" value="<?=$url?>"/>
             <input class="submit" type="submit" name="add_submit" value="添加" />
         </form>
+        <div class="res_msg">
+            <span class="info">返回信息：</span>
+            <span class="ret"><?=$ret?></span>
+        </div>
     </div>
     <div class="holder"></div>
 </div>
