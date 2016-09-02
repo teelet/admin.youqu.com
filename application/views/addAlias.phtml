@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/contentManage.css">
     <SCRIPT src="/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="/js/jquery.page.js" type="text/javascript"></SCRIPT>
-    <script src="/js/jquery.cxselect.min.js"></script>
+    <SCRIPT type="text/javascript" src="/js/content.js"></SCRIPT>
 </head>
 <body>
 <div id="res_msg" style="display: none;text-align: center;color:#008ead;margin: 5px auto;font-size: 18px;"><?=$res_msg?></div>
@@ -16,18 +16,20 @@
         	
             <form id="tag_custom" action="/addalias/search" method="get">
               选择游戏:
-              <select class="first" data-value="标签类别" disabled="disabled" name="tag_level1" id="tag_level1">
-              		<option value="0">==选择游戏==</option>
+              <select class="first"   name="tag_level1" id="tag_level1">
+              <?php foreach ($tag_list as $val):?>
+              	<option value="<?=$val['tid']?>"><?=$val['name']?></option>
+              <?php endforeach;?>
              	</select>
               二级标签:
-              <select class="second" data-value="二级标签" disabled="disabled" name="tag_level2" id="tag_level2">
-              		<option value="0">一级标签</option>
+              <select class="second"   name="tag_level2" id="tag_level2">
+              	<option value='0'>请选择</option>
             	</select><br/>
             	标签名称:
-            	<select class="third" data-value="具体标签名称" disabled="disabled" name="tag_level3" id="tag_level3">
-              		<option value="0">具体标签名称</option>
+            	<select class="third"   name="tag_level3" id="tag_level3">
+            	<option value='0'>请选择</option>
             	</select>
-            	<input class="submit" type="submit" name="search_submit" value="查询别名" />
+            	<input class="submit float_input" type="submit" name="search_submit" value="查询别名" />
             	<br/>
               别名列表:</br>
               <textarea name="alias_name_list" id="alias_name_list" cols="75" rows="10" readonly="readonly"><?php echo $alias_list;?></textarea>
@@ -39,7 +41,7 @@
 			    <input id="tag_id_level3" type="hidden" name="tag_id_level3" value=""/>
                 新增别名:
                	<input type="text" name="alias_name" placeholder="请输入新增的别名"/>
-                <input class="submit" type="submit" name="add_submit" value="添加别名" />
+                <input class="submit float_input" type="submit" name="add_submit" value="添加别名" />
             </form>
 
         </div>
@@ -47,27 +49,68 @@
     </div>
   </div>
 
-
 <script type="text/javascript">
-$('#tag_custom').cxSelect({
-  selects: ['first', 'second', 'third'],
-  required: true,
-  url: <?php echo $tag_list;?>
-});
+//查询二级标签列表
+function getSecondLevelList(gid){
+	//清除二级标签列表和值
+	$("#tag_id_level2").attr("value",0);
+	$(".second").empty();
+	$("#tag_id_level3").attr("value",0);
+	$(".third").empty();
+	//查询二级标签列表
+	$.ajax({ 
+	      url:"/ajax_taglist/secondlevel?gid="+gid, 
+	      dataType:"text", 
+	      success:function(data) { 
+	        $(".second").append(data);
+	        //选择第一个二级标签的id
+	    	type = $(".second").get(0).value;
+	    	$("#tag_id_level2").attr("value",type);
+	    	getThirdLevelList(type);
+	        }
+	}); 
+	
+}
+//查询三级标签列表
+function getThirdLevelList(type){
+	//清空三级标签的历史数据
+	$("#tag_id_level3").attr("value",0);
+	$(".third").empty();
+	//查询三级标签列表
+	$.ajax({ 
+	      url:"/ajax_taglist/thirdlevel?type="+type, 
+	      dataType:"text", 
+	      success:function(data) { 
+	        $(".third").append(data);
+		      //选择第一个三级标签的id
+	    	id = $(".third").get(0).value;
+	    	$("#tag_id_level3").attr("value",id);
+	        }
+	     }); 
+}
 $(document).ready(function(){
 	$('.first').change(function(){ 
 	var p1=$(this).children('option:selected').val();//这就是selected的值 
 	$("#tag_id_level1").attr("value",p1);
+	//加载二级标签的列表
+	getSecondLevelList(p1);
 	});
 	$('.second').change(function(){ 
 		var p1=$(this).children('option:selected').val();//这就是selected的值 
 		$("#tag_id_level2").attr("value",p1);
+		//加载三级标签列表
+		getThirdLevelList(p1);
 	});
 	$('.third').change(function(){ 
 		var p1=$(this).children('option:selected').val();//这就是selected的值 
 		$("#tag_id_level3").attr("value",p1);
 	}); 
 });
+//首先选择第一个
+var gid = $(".first").get(0).value;
+$("#tag_id_level1").attr("value",gid);
+//加载二级标签的列表
+getSecondLevelList(gid);
 </script>
 </body>
 </html>

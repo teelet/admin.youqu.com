@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/contentManage.css">
     <SCRIPT src="/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="/js/jquery.page.js" type="text/javascript"></SCRIPT>
-    <script src="/js/jquery.cxselect.min.js"></script>
+    <SCRIPT type="text/javascript" src="/js/content.js"></SCRIPT>
     <style>
       #tag_custom{
             padding: 1px;
@@ -15,10 +15,14 @@
       .add_tag{
         margin: 10px 20px 0px 80px;
       }
+      .holder_tag{
+      	height:60px;
+      }
     </style>
 </head>
 
 <body>
+<div id="res_msg" style="display: none;text-align: center;color:#008ead;margin: 5px auto;font-size: 18px;"><?=$res_msg?></div>
 	<div class="common_box">
         <div class="search_div">
         	
@@ -34,40 +38,115 @@
                 <tr>
                   <td>标签级别:</td>
                   <td>
-                    <select class="first" disabled="disabled" name="tag_level" id="tag_level">
+                    <select class="first"  name="tag_level" id="tag_level">
+                    	<?php foreach ($level_list as $k=>$v):?>
+                    	<option value ="<?=$k?>"><?=$v?></option>
+                    	<?php endforeach;?>
                     </select>
                   </td>
                 </tr>
-                <tr>
+                <tr class="second_level">
                   <td>选择游戏:</td>
                   <td>
-                    <select class="second" disabled="disabled" name="tag_id_level1" id="tag_id_level1">
+                    <select class="second" name="tag_id_level1" id="tag_id_level1">
                     </select>
                   </td>
                 </tr>
-                <tr>
+                <tr class="third_level">
                   <td>对应二级标签:</td>
                   <td>
-                    <select class="third" disabled="disabled" name="tag_id_level2" id="tag_id_level2">
+                    <select class="third"  name="tag_id_level2" id="tag_id_level2">
                     </select>
                   </td>
                 </tr>
                 <tr>
                   <td></td>
                   <td>
-                    <input class="submit add_tag" type="submit" name="editsubmit" value="添加"/>
+                    <input class="submit float_input add_tag" type="submit" name="editsubmit" value="添加"/>
                   </td>
                 </tr>
               </table>
             </form>
         </div>
-        <div class="holder"></div>
+        <div class="holder_tag"></div>
     </div>
 <script type="text/javascript">
-$('#tag_custom').cxSelect({
-  selects: ['first', 'second', 'third'],
-  required: true,
-  url: <?php echo $level_list;?>
+function clearSecondLevel(){
+	$(".second_level").hide();
+	$(".second").empty();
+}
+function clearThirdLevel(){
+	$(".third_level").hide();
+	$(".third").empty();
+}
+$(document).ready(function(){
+	clearSecondLevel();
+	clearThirdLevel();
+	$('.first').change(function(){ 
+		var p1=$(this).children('option:selected').val();//这就是selected的值 
+		if(p1 == 1){
+			//选择一级时隐藏二、三级
+			clearSecondLevel();
+			clearThirdLevel();
+		}else if(p1 == 2){
+			//选择二级时隐藏三级，获取二级的列表
+			clearThirdLevel();
+			$.ajax({ 
+				url:"/ajax_taglist/firstlevel", 
+				dataType:"text", 
+				success:function(data) { 
+					//在二级下显示
+					clearSecondLevel();
+					$(".second").append(data);
+					$(".second_level").show();
+				}
+			}); 
+		}else if(p1 == 3){
+			//选择三级时显示二级和三级，获取二级的列表
+			$(".third_level").show();
+			$(".third").append("<option value=\'0\'>选择二级标签</option>");
+			$.ajax({ 
+				url:"/ajax_taglist/firstlevel", 
+				dataType:"text", 
+				success:function(data) { 
+					//在二级下显示
+					clearSecondLevel();
+					$(".second").append(data);
+					$(".second_level").show();
+					//获取第一个二级标签的gid
+					gid = $(".second").get(0).value;
+					//查询第一个二级标签的三级列表
+					$.ajax({ 
+					      url:"/ajax_taglist/secondlevel?gid="+gid, 
+					      dataType:"text", 
+					      success:function(data1) { 
+					        //在二级下显示
+					        clearThirdLevel();
+					        $(".third").append(data1);
+					        $(".third_level").show();
+					        }
+					     }); 
+				}
+			}); 
+		}
+	});
+	$('.second').change(function(){ 
+	    var p1=$(".first").children('option:selected').val();
+		var p2=$(this).children('option:selected').val();
+	    if(p1 == 3){
+	    //获取三级的列表
+	      $.ajax({ 
+	      url:"/ajax_taglist/secondlevel?gid="+p2, 
+	      dataType:"text", 
+	      success:function(data1) { 
+	        //在二级下显示
+	        clearThirdLevel();
+	        $(".third").append(data1);
+	        $(".third_level").show();
+	        }
+	      }); 
+	      }
+	});
 });
 </script>
 </body>

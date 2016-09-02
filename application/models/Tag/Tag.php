@@ -64,7 +64,58 @@ class Tag_TagModel {
 		) );
 		return $tag_list;
 	}
-	
+	/**
+	 * 根据标签的级别和一级标签id查询标签列表，按时间递减
+	 *
+	 * @param unknown $level        	
+	 * @return unknown
+	 */
+	public static function getTagListByGid($level, $gid) {
+		// 获取数据库配置文件
+		$config = Comm_Config::getPhpConf ( 'db/db.' . self::db . '.read' );
+		$instance = Comm_Db_Handler::getInstance ( self::db, $config );
+		$tag_list = $instance->select ( 'tag', array (
+				'tid',
+				'name',
+				'gid',
+				'level',
+				'type' 
+		), array (
+				'and' => array (
+						'gid' => $gid,
+						'level' => $level 
+				) 
+		), array (
+				'ORDER' => 'atime desc' 
+		) );
+		return $tag_list;
+	}
+	/**
+	 * 根据标签的级别和二级标签id查询标签列表，按时间递减
+	 *
+	 * @param unknown $level
+	 * @return unknown
+	 */
+	public static function getTagListByType($level, $type) {
+		// 获取数据库配置文件
+		$config = Comm_Config::getPhpConf ( 'db/db.' . self::db . '.read' );
+		$instance = Comm_Db_Handler::getInstance ( self::db, $config );
+		$tag_list = $instance->select ( 'tag', array (
+				'tid',
+				'name',
+				'gid',
+				'level',
+				'type'
+		), array (
+				'and' => array (
+						'type' => $type,
+						'level' => $level
+				)
+		), array (
+				'ORDER' => 'atime desc'
+		) );
+		return $tag_list;
+	}
 	/**
 	 * 将三个级别的标签合并成层级关系的列表
 	 *
@@ -229,6 +280,31 @@ class Tag_TagModel {
 		}
 		$level_list [2] ['s'] = array_merge ( $level_list [2] ['s'], $new_level1_list );
 		return array_values ( $level_list );
+	}
+	/**
+	 * 获取标签级别列表
+	 *
+	 * @return multitype:string
+	 */
+	public static function getLevelList() {
+		$level_list = array (
+				'1' => '一级标签',
+				'2' => '二级标签',
+				'3' => '三级标签' 
+		);
+		return $level_list;
+	}
+	/**
+	 * 将tag列表封装成option格式
+	 *
+	 * @param unknown $tag_list        	
+	 */
+	public static function getTagSelectOptions($tag_list) {
+		$ret = "<option value='0'>请选择</option>";
+		foreach ( $tag_list as $val ) {
+			$ret .= "<option value='{$val['tid']}'>{$val['name']}</option>";
+		}
+		return $ret;
 	}
 	/**
 	 * 查询别名列表
