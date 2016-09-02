@@ -103,12 +103,20 @@
                     <th>操作内容</th>
                     <th>IP</th>
                 </tr>
-                <tr>
-                    <td>yangfan13</td>
-                    <td>2016-02-01 12:07:19</td>
-                    <td>修改文章＊＊＊标题</td>
-                    <td>10.209.74.137</td>
-                </tr>
+                <?php
+                    if($logs):
+                        foreach ($logs as $log):
+                ?>
+                            <tr>
+                                <td><?=$log['username']?></td>
+                                <td><?=$log['atime']?></td>
+                                <td><?=$log['content']?></td>
+                                <td><?=$log['ip']?></td>
+                            </tr>
+                <?php
+                        endforeach;
+                    endif;
+                ?>
             </table>
             <div id="pager1"></div>
         </div>
@@ -117,10 +125,10 @@
 </div>
 <script type="text/javascript">
     $("#pager1").createPage({
-        pageCount: 10,
-        current: 3,
+        pageCount: <?=$pageSum?>,
+        current: <?=$page?>,
         backFn: function (page) {
-            window.location.reload();
+            window.location.href = '/authManage?page=' + page;
         }
     })
 </script>

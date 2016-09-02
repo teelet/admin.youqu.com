@@ -10,6 +10,9 @@ class User_UserModel {
 
     const db = 'gameinfo';
 
+    /**
+     *  获取用户权限
+     */
     public static function getUserAuth($userName){
         //获取数据库配置文件
         $config = Comm_Config::getPhpConf('db/db.'.self::db.'.read');
@@ -17,6 +20,10 @@ class User_UserModel {
         $auth = $instance->select('root', array('auth'), array('username' => $userName))[0];
         return $auth['auth'];
     }
+
+    /**
+     *  认证登录信息
+     */
 
     public static function checkLoginInfo($userName, $password){
         //获取数据库配置文件
@@ -34,6 +41,29 @@ class User_UserModel {
             return -2;
         }
         return 0;
+    }
+
+    /**
+     *  获取管理员操作日志
+     */
+
+    public static function getRootLog($page = 1, $pageSize = 10){
+        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.read');
+        $instance = Comm_Db_Handler::getInstance(self::db, $config);
+        $start = ($page - 1) * $pageSize;
+        $log = $instance->select('root_log', '*', array('ORDER' => array('atime' => 'DESC'),'LIMIT' => array($start, $pageSize)));
+        return $log;
+    }
+
+    /**
+     *  获取管理员日志总条数
+     */
+
+    public static function getRootLogCount(){
+        $config = Comm_Config::getPhpConf('db/db.'.self::db.'.read');
+        $instance = Comm_Db_Handler::getInstance(self::db, $config);
+        $count = $instance->count('root_log');
+        return $count;
     }
 
     /**
