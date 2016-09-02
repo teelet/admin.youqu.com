@@ -30,18 +30,22 @@ class AddtagController extends AbstractController {
 			echo "请输入标签名称!";
 			die ();
 		}
-		$parent_tag_id = 0;
+		$gid = 0;
+		$type = 0;
 		if ($tag_id_level2 != 0) {
 			// 选取的是level3
-			$parent_tag_id = $tag_id_level2;
+			$gid = $tag_id_level1;
+			$type = $tag_id_level2;
 		} elseif ($tag_id_level1 != 0) {
 			// 选取的是level2
-			$parent_tag_id = $tag_id_level1;
+			$gid = $tag_id_level1;
+			$type = 0;
 		} else {
 			// 选取的是level1
-			$parent_tag_id = 0;
+			$gid = 0;
+			$type = 0;
 		}
-		$ret = Tag_TagModel::insertTag ( $parent_tag_id, $tag_name, $tag_level );
+		$ret = Tag_TagModel::insertTag ( $tag_name, $tag_level, $gid, $type );
 		if (! $ret) {
 			echo "添加失败!";
 			die ();
