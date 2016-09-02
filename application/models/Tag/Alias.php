@@ -39,11 +39,15 @@ class Tag_AliasModel {
 		// 连接数据库
 		$config = Comm_Config::getPhpConf ( 'db/db.' . self::db . '.write' );
 		$instance = Comm_Db_Handler::getInstance ( self::db, $config );
-		$ret = $instance->insert ( 'alias', array (
-				'tid' => $tag ['tid'],
-				'display_name' => $tag ['name'],
-				'alias' => $alias_name 
-		) );
+		$insertArray = array ();
+		foreach ( $alias_name as $val ) {
+			$insertArray [] = array (
+					'tid' => $tag ['tid'],
+					'display_name' => $tag ['name'],
+					'alias' => $val 
+			);
+		}
+		$ret = $instance->insert ( 'alias', $insertArray );
 		return $ret;
 	}
 }

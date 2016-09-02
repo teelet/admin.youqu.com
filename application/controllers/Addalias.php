@@ -47,6 +47,7 @@ class AddaliasController extends AbstractController {
 		$tag_id_level2 = trim ( Comm_Context::form ( "tag_id_level2", 0 ) );
 		$tag_id_level3 = trim ( Comm_Context::form ( "tag_id_level3", 0 ) );
 		$alias_name = trim ( Comm_Context::form ( "alias_name", "" ) );
+		$alias_name = explode("\r\n", $alias_name);
 		if ($tag_id_level1 != 0)
 			$tag_id = $tag_id_level1;
 		if ($tag_id_level2 != 0)
