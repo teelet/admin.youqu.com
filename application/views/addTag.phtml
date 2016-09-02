@@ -12,6 +12,9 @@
       #tag_custom{
             padding: 1px;
       }
+      #tag_custom td{
+      	width:100px;
+      }
       .add_tag{
         margin: 10px 20px 0px 80px;
       }
@@ -104,7 +107,6 @@ $(document).ready(function(){
 		}else if(p1 == 3){
 			//选择三级时显示二级和三级，获取二级的列表
 			$(".third_level").show();
-			$(".third").append("<option value=\'0\'>选择二级标签</option>");
 			$.ajax({ 
 				url:"/ajax_taglist/firstlevel", 
 				dataType:"text", 
@@ -113,19 +115,7 @@ $(document).ready(function(){
 					clearSecondLevel();
 					$(".second").append(data);
 					$(".second_level").show();
-					//获取第一个二级标签的gid
-					gid = $(".second").get(0).value;
-					//查询第一个二级标签的三级列表
-					$.ajax({ 
-					      url:"/ajax_taglist/secondlevel?gid="+gid, 
-					      dataType:"text", 
-					      success:function(data1) { 
-					        //在二级下显示
-					        clearThirdLevel();
-					        $(".third").append(data1);
-					        $(".third_level").show();
-					        }
-					     }); 
+					$(".third").append("<option value='0'>请选择</option>");
 				}
 			}); 
 		}

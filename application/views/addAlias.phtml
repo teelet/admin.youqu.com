@@ -39,8 +39,9 @@
 			    <input id="tag_id_level1" type="hidden" name="tag_id_level1" value=""/>
 			    <input id="tag_id_level2" type="hidden" name="tag_id_level2" value=""/>
 			    <input id="tag_id_level3" type="hidden" name="tag_id_level3" value=""/>
-                新增别名:
-               	<input type="text" name="alias_name" placeholder="请输入新增的别名"/>
+                新增别名:<br/>
+                <textarea name="alias_name" id="alias_name_list" cols="75" rows="5" placeholder="请输入新增的别名,多个别名用回车间隔"></textarea>
+                <br/>
                 <input class="submit float_input" type="submit" name="add_submit" value="添加别名" />
             </form>
 
@@ -66,8 +67,8 @@ function getSecondLevelList(gid){
 	        //选择第一个二级标签的id
 	    	type = $(".second").get(0).value;
 	    	$("#tag_id_level2").attr("value",type);
-	    	getThirdLevelList(type);
-	        }
+	    	$(".third").append("<option value='0'>请选择</option>");
+	       }
 	}); 
 	
 }
