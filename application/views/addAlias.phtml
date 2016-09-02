@@ -10,28 +10,33 @@
     <script src="/js/jquery.cxselect.min.js"></script>
 </head>
 <body>
+<div id="res_msg" style="display: none;text-align: center;color:#008ead;margin: 5px auto;font-size: 18px;"><?=$res_msg?></div>
     <div class="common_box">
         <div class="search_div">
         	
-            <form id="tag_custom" action="" method="get">
+            <form id="tag_custom" action="/addalias/search" method="get">
               选择游戏:
-              <select class="first" data-value="标签类别" disabled="disabled" name="tag_catalog" id="tag_catalog">
+              <select class="first" data-value="标签类别" disabled="disabled" name="tag_level1" id="tag_level1">
               		<option value="0">==选择游戏==</option>
              	</select>
-              一级标签:
-              <select class="second" data-value="一级标签" disabled="disabled" name="tag_level1" id="tag_level1">
-              		<option value="1">一级标签</option>
+              二级标签:
+              <select class="second" data-value="二级标签" disabled="disabled" name="tag_level2" id="tag_level2">
+              		<option value="0">一级标签</option>
             	</select><br/>
             	标签名称:
-            	<select class="third" data-value="具体标签名称" disabled="disabled" name="tag_name" id="tag_name">
+            	<select class="third" data-value="具体标签名称" disabled="disabled" name="tag_level3" id="tag_level3">
               		<option value="0">具体标签名称</option>
             	</select>
             	<input class="submit" type="submit" name="search_submit" value="查询别名" />
             	<br/>
               别名列表:</br>
-              <textarea name="alias_name_list" id="alias_name_list" cols="75" rows="10" readonly="readonly">别名1:  别名2:  别名3:</textarea>
+              <textarea name="alias_name_list" id="alias_name_list" cols="75" rows="10" readonly="readonly"><?php echo $alias_list;?></textarea>
             </form>
-			       <form action="" method="get">
+			<form action="/addalias/add" method="post">
+			    <input id="tag_id" type="hidden" name="tag_id" value="<?php echo $tag_id;?>"/>
+			    <input id="tag_id_level1" type="hidden" name="tag_id_level1" value=""/>
+			    <input id="tag_id_level2" type="hidden" name="tag_id_level2" value=""/>
+			    <input id="tag_id_level3" type="hidden" name="tag_id_level3" value=""/>
                 新增别名:
                	<input type="text" name="alias_name" placeholder="请输入新增的别名"/>
                 <input class="submit" type="submit" name="add_submit" value="添加别名" />
@@ -40,71 +45,29 @@
         </div>
         <div class="holder"></div>
     </div>
+  </div>
+
 
 <script type="text/javascript">
 $('#tag_custom').cxSelect({
   selects: ['first', 'second', 'third'],
   required: true,
-  url: [
-    {'v': 1, 'n': '英雄联盟', 's': [
-      {'v': 1, 'n': '英雄联盟一级标签', 's': [
-        {'v': 1, 'n': '英雄联盟一级标签具体名称1'},
-        {'v': 2, 'n': '英雄联盟一级标签具体名称2'}
-      ]},
-      {'v': 2, 'n': '英雄联盟二级标签', 's': [
-        {'v': 1, 'n': '英雄联盟二级标签具体名称1'},
-        {'v': 2, 'n': '英雄联盟二级标签具体名称2'}
-      ]},
-      {'v': 3, 'n': '英雄联盟三级标签', 's': [
-        {'v': 1, 'n': '英雄联盟三级标签具体名称1'},
-        {'v': 2, 'n': '英雄联盟三级标签具体名称2'}
-      ]}
-    ]},
-    {'v': 2, 'n': '守望先锋', 's': [
-      {'v': 1, 'n': '守望先锋一级标签', 's': [
-        {'v': 1, 'n': '守望先锋一级标签具体名称1'},
-        {'v': 2, 'n': '守望先锋一级标签具体名称2'}
-      ]},
-      {'v': 2, 'n': '守望先锋二级标签', 's': [
-        {'v': 1, 'n': '守望先锋二级标签具体名称1'},
-        {'v': 2, 'n': '守望先锋二级标签具体名称2'}
-      ]},
-      {'v': 3, 'n': '守望先锋三级标签', 's': [
-        {'v': 1, 'n': '守望先锋三级标签具体名称1'},
-        {'v': 2, 'n': '守望先锋三级标签具体名称2'}
-      ]}
-    ]},
-    {'v': 3, 'n': 'DOTA2', 's': [
-      {'v': 1, 'n': 'DOTA2一级标签', 's': [
-        {'v': 1, 'n': 'DOTA2一级标签具体名称1'},
-        {'v': 2, 'n': 'DOTA2一级标签具体名称2'}
-      ]},
-      {'v': 2, 'n': 'DOTA2二级标签', 's': [
-        {'v': 1, 'n': 'DOTA2二级标签具体名称1'},
-        {'v': 2, 'n': 'DOTA2二级标签具体名称2'}
-      ]},
-      {'v': 3, 'n': 'DOTA2三级标签', 's': [
-        {'v': 1, 'n': 'DOTA2三级标签具体名称1'},
-        {'v': 2, 'n': 'DOTA2三级标签具体名称2'}
-      ]}
-    ]},
-    {'v': 4,'n': '炉石传说', 's': [
-      {'v': 1, 'n': '炉石传说一级标签', 's': [
-        {'v': 1, 'n': '炉石传说一级标签具体名称1'},
-        {'v': 2, 'n': '炉石传说一级标签具体名称2'}
-      ]},
-      {'v': 2, 'n': '炉石传说二级标签', 's': [
-        {'v': 1, 'n': '炉石传说二级标签具体名称1'},
-        {'v': 2, 'n': '炉石传说二级标签具体名称2'}
-      ]},
-      {'v': 3, 'n': '炉石传说三级标签', 's': [
-        {'v': 1, 'n': '炉石传说三级标签具体名称1'},
-        {'v': 2, 'n': '炉石传说三级标签具体名称2'}
-      ]}
-    ]}
-  ]
+  url: <?php echo $tag_list;?>
+});
+$(document).ready(function(){
+	$('.first').change(function(){ 
+	var p1=$(this).children('option:selected').val();//这就是selected的值 
+	$("#tag_id_level1").attr("value",p1);
+	});
+	$('.second').change(function(){ 
+		var p1=$(this).children('option:selected').val();//这就是selected的值 
+		$("#tag_id_level2").attr("value",p1);
+	});
+	$('.third').change(function(){ 
+		var p1=$(this).children('option:selected').val();//这就是selected的值 
+		$("#tag_id_level3").attr("value",p1);
+	}); 
 });
 </script>
-</div>
 </body>
 </html>

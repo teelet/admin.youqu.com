@@ -8,25 +8,57 @@
     <SCRIPT src="/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="/js/jquery.page.js" type="text/javascript"></SCRIPT>
     <script src="/js/jquery.cxselect.min.js"></script>
+    <style>
+      #tag_custom{
+            padding: 1px;
+      }
+      .add_tag{
+        margin: 10px 20px 0px 80px;
+      }
+    </style>
 </head>
 
 <body>
 	<div class="common_box">
         <div class="search_div">
         	
-            <form id="tag_custom" action="" method="get">
-                标签名称:
-                <input type="text" name="tag_name" placeholder="请输入标签名称"/><br/>
-                标签级别:
-                <select class="second" disabled="disabled" name="tag_level1" id="tag_level1">
-                </select><br/>
-                选择游戏:
-                <select class="first" disabled="disabled" name="tag_catalog" id="tag_catalog">
-        		    </select><br/>
-            	  对应二级标签:
-            	  <select class="third short" disabled="disabled" name="tag_level2" id="tag_level2">
-      			    </select><br/>
-      			    <input class="submit" type="submit" name="editsubmit" value="添加"/>
+            <form id="tag_custom" action="/addtag/add" method="post">
+              <table class="table editTable common_margin">
+                <tr></tr>
+                <tr>
+                  <td>标签名称:</td>
+                  <td>
+                     <input type="text" name="tag_name" placeholder="请输入标签名称"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>标签级别:</td>
+                  <td>
+                    <select class="first" disabled="disabled" name="tag_level" id="tag_level">
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>选择游戏:</td>
+                  <td>
+                    <select class="second" disabled="disabled" name="tag_id_level1" id="tag_id_level1">
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>对应二级标签:</td>
+                  <td>
+                    <select class="third" disabled="disabled" name="tag_id_level2" id="tag_id_level2">
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <input class="submit add_tag" type="submit" name="editsubmit" value="添加"/>
+                  </td>
+                </tr>
+              </table>
             </form>
         </div>
         <div class="holder"></div>
@@ -35,76 +67,7 @@
 $('#tag_custom').cxSelect({
   selects: ['first', 'second', 'third'],
   required: true,
-  url: [
-    {'v': 1, 'n': '英雄联盟', 's': [
-      {'v': 1, 'n': '一级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 2, 'n': '二级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 3, 'n': '三级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]}
-    ]},
-    {'v': 2, 'n': '守望先锋', 's': [
-      {'v': 1, 'n': '一级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 2, 'n': '二级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 3, 'n': '三级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]}
-    ]},
-    {'v': 3, 'n': 'DOTA2', 's': [
-      {'v': 1, 'n': '一级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 2, 'n': '二级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 3, 'n': '三级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]}
-    ]},
-    {'v': 4,'n': '炉石传说', 's': [
-      {'v': 1, 'n': '一级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 2, 'n': '二级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]},
-      {'v': 3, 'n': '三级标签', 's': [
-        {'v': 1, 'n': '一级标签'},
-        {'v': 2, 'n': '二级标签'},
-        {'v': 3, 'n': '三级标签'}
-      ]}
-    ]}
-  ]
+  url: <?php echo $level_list;?>
 });
 </script>
 </body>
