@@ -5,6 +5,7 @@
     <title>添加别名</title>
     <link rel="stylesheet" type="text/css" href="/css/jquery.page.js.css">
     <link rel="stylesheet" type="text/css" href="/css/contentManage.css">
+    <link rel="stylesheet" type="text/css" href="/css/otherOperation.css">
     <SCRIPT src="/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="/js/jquery.page.js" type="text/javascript"></SCRIPT>
     <SCRIPT type="text/javascript" src="/js/content.js"></SCRIPT>
@@ -15,32 +16,32 @@
         <div class="search_div">
         	
             <form id="tag_custom" action="/addalias/search" method="get">
-              选择游戏:
+              <span>选择游戏:</span>
               <select class="first"   name="tag_level1" id="tag_level1">
               <?php foreach ($tag_list as $val):?>
               	<option value="<?=$val['tid']?>"><?=$val['name']?></option>
               <?php endforeach;?>
              	</select>
-              二级标签:
+              <span>二级标签:</span>
               <select class="second"   name="tag_level2" id="tag_level2">
               	<option value='0'>请选择</option>
             	</select><br/>
-            	标签名称:
+            	<span>标签名称:</span>
             	<select class="third"   name="tag_level3" id="tag_level3">
             	<option value='0'>请选择</option>
             	</select>
             	<input class="submit float_input" type="submit" name="search_submit" value="查询别名" />
             	<br/>
-              别名列表:</br>
-              <textarea name="alias_name_list" id="alias_name_list" cols="75" rows="10" readonly="readonly"><?php echo $alias_list;?></textarea>
+              <span class="next_content">别名列表:</span></br>
+              <span></span><textarea name="alias_name_list" id="alias_name_list" cols="65" rows="10" readonly="readonly"><?php echo $alias_list;?></textarea>
             </form>
 			<form action="/addalias/add" method="post">
 			    <input id="tag_id" type="hidden" name="tag_id" value="<?php echo $tag_id;?>"/>
 			    <input id="tag_id_level1" type="hidden" name="tag_id_level1" value=""/>
 			    <input id="tag_id_level2" type="hidden" name="tag_id_level2" value=""/>
 			    <input id="tag_id_level3" type="hidden" name="tag_id_level3" value=""/>
-                新增别名:<br/>
-                <textarea name="alias_name" id="alias_name_list" cols="75" rows="5" placeholder="请输入新增的别名,多个别名用回车间隔"></textarea>
+                <span class="next_content">新增别名:</span><br/>
+                <span></span><textarea name="alias_name" id="alias_name_list" cols="65" rows="5" placeholder="请输入新增的别名,多个别名用回车间隔"></textarea>
                 <br/>
                 <input class="submit float_input" type="submit" name="add_submit" value="添加别名" />
             </form>
