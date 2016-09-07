@@ -12,6 +12,8 @@ class AddaliasController extends AbstractController {
 	 * 添加别名页面
 	 */
 	public function indexAction() {
+	    //判断用户是否登录
+        $this->isLogin();
 		$this->commonAction ();
 		return $this->end ();
 	}

@@ -13,6 +13,8 @@ class AuthmanageController extends AbstractController {
      */
 
     public function indexAction() {
+        //判断用户是否登录
+        $this->isLogin();
         $pageSize = 1;
         $currentPage = (int)Comm_Context::param('page', 1);
         //日志总条数
@@ -47,6 +49,7 @@ class AuthmanageController extends AbstractController {
         $res_msg = User_UserModel::updatePassword($user, $password);
         if($res_msg['status'] == 0 && $user == $loginUser){ //重新登录
             echo '<script>alert("修改成功,请重新登录");window.parent.location.href = "/login";</script>';
+            exit;
         }
         $this->data['res_msg'] = $res_msg['msg'];
 

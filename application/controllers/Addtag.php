@@ -11,6 +11,8 @@ class AddtagController extends AbstractController {
 	 * 默认动作
 	 */
 	public function indexAction() {
+        //判断用户是否登录
+        $this->isLogin();
 		// 获取级联下拉列表
 		$this->commonAction ();
 		return $this->end ();

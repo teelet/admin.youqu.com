@@ -12,10 +12,7 @@ class IndexController extends AbstractController {
 
     public function indexAction() {
         //判断用户是否登录
-        $status = $_COOKIE['status'];
-        if(empty($status) || $status == 'logout'){
-            header('location: /login');
-        }
+        $this->isLogin();
         $userName = $_COOKIE['user'];
         $this->tpl = 'main.phtml'; //试图页面
         $this->data['userName'] = $userName;

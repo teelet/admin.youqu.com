@@ -13,6 +13,8 @@ class AddarticleController extends AbstractController {
      */
 
     public function indexAction() {
+        //判断用户是否登录
+        $this->isLogin();
         $this->tpl = 'addArticle.phtml'; //试图页面
         if(empty($this->data['ret'])){
             $this->data['ret'] = "无返回信息";

@@ -46,6 +46,16 @@ class AbstractController extends Yaf_Controller_Abstract {
         //关闭自动渲染
         return FALSE;
     }
+
+    public function isLogin(){
+        //判断用户是否登录
+        $user = $_COOKIE["user"];
+        $status = $_COOKIE["status"];
+        if(empty($user) || $status != "login"){
+            header("location: /login");
+            exit;
+        }
+    }
     
     /*
      * 格式化结果

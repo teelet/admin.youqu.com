@@ -13,6 +13,8 @@ class ContenteditController extends AbstractController {
      */
 
     public function indexAction() {
+        //判断用户是否登录
+        $this->isLogin();
         $this->tpl = 'contentEdit.phtml'; //试图页面
         /*
         $this->data = array(); //试图页数据
