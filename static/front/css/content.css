@@ -95,7 +95,7 @@ button[name=search]{
 .editTable input[type=checkbox],.editTable #tagScore,.editTable .editMargin{
 	margin: 10px 0px 10px 10px;
 }
-#buttonTd{
+.buttonTd{
 	padding-right: 10%;
 }
 .editButton{

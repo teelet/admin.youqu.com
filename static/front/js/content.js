@@ -25,10 +25,65 @@ $(function () {
             secondClassArray[$(this).attr("tag")][$(this).attr("name")][1] = $(this).val();
         });
     }
+    //修改文章内容
+    $('#updateArticleContent').on('click', function () {
+        var title = $('#articleTitle').val().trim();
+        if(title == ''){
+            alert('文章标题不可为空');
+            return;
+        }
+        var summary = $('#summary').val().trim();
+        if(summary == ''){
+            alert('文章摘要不可为空');
+            return;
+        }
+        var articleType = $('#contentType').val();
+        var articleForm = $('#contentStyle').val();
+        if(confirm("确认修改该文章内容？")){
+            var param = {};
+            var aid = $('#aid').val();
+            param['title'] = title;
+            param['summary'] = summary;
+            param['a_t_id'] = articleType;
+            param['a_f_id'] = articleForm;
+            var date = new Date($('#ctime').text().trim());
+            param['ctime'] = date.getTime() / 1000;
+            $.ajax({
+                url  : '/ajax_article/updatecontent',
+                type : 'POST',
+                dataType : 'json',
+                data : {'aid' : aid, 'json' : param},
+                success : function (data) {
+                    if(data.status == 0){
+                        alert(data.result);
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+    });
+    //修改文章标签
+    $('#updateArticletag').on('click', function () {
+        if(confirm("确认修改该文章标签？")){
+
+        }
+    });
     // 删除前提示
-    $(".delete").click(function(e){
-        if(!confirm("确认删除该文章？")){
-            e.preventDefault();
+    $(".delete").click(function(){
+        if(confirm("确认删除该文章？")){
+            var aid = $(this).attr('data-aid');
+            $.ajax({
+                url  : '/ajax_article/setarticlestatus',
+                type : 'POST',
+                dataType : 'json',
+                data : {'aid' : aid, 'type' : 1},
+                success : function (data) {
+                    if(data.status == 0){
+                        alert(data.result);
+                        window.location.reload();
+                    }
+                }
+            });
         }
     });
     // 一级标签改变，二级标签跟着变，如果一级标签的值和最开始的相同，则显示开始时的内容

@@ -16,11 +16,16 @@ class ContenteditController extends AbstractController {
         //判断用户是否登录
         $this->isLogin();
         $this->tpl = 'contentEdit.phtml'; //试图页面
-        /*
-        $this->data = array(); //试图页数据
-        $get = $this->getRequest()->getQuery("name", "aaa"); //获取参数
-        $this->data['name'] = $get;
-        */
+        $this->data['aid'] = Comm_Context::param('aid', 0);
+        //获取文章内容
+        $article = Article_ArticleModel::getArticleContent($this->data['aid']);
+        $this->data['article'] = $article['result'];
+        //获取内容类型
+        $this->data['article_types'] = Article_ArticleModel::getArticleTypes();
+        //获取内容形式
+        $this->data['article_forms'] = Article_ArticleModel::getArticleForms();
+        //获取文章标签
+        
         //渲染
         $this->assign();
         return $this->end();

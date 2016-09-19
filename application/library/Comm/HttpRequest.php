@@ -425,6 +425,10 @@ class Comm_HttpRequest {
     private function get_host_id() {
         return $this->host_name . ':' . $this->host_port;
     }
+
+    public function set_header($header){
+        curl_setopt($this->ch, CURLOPT_HTTPHEADER, $header);
+    }
     
     private function curl_setopt() {
         curl_setopt($this->ch, CURLOPT_URL, $this->url);

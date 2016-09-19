@@ -1,6 +1,6 @@
 <?php
 /**
- * 验证用户登录信息
+ * ajax验证用户登录信息
  * User: shaohua5
  * Date: 16/8/30
  * Time: 下午2:15

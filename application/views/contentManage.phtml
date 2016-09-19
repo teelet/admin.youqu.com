@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/contentManage.css">
     <SCRIPT src="/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="/js/jquery.page.js" type="text/javascript"></SCRIPT>
+    <SCRIPT type="text/javascript" src="/js/contentManage.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="/js/content.js"></SCRIPT>
 </head>
 <body>
@@ -14,28 +15,56 @@
         <div class="search_div">
             <form action="" method="get">
                 游戏名称:
-                <select>
-                    <option>游戏</option>
-                    <option>游戏</option>
-                    <option>游戏</option>
+                <select name="gid" id="gid">
+                    <option value="">请选择</option>
+                    <?php
+                        if($game_list):
+                            foreach($game_list as $game):
+                    ?>
+                                <option value="<?=$game['gid']?>" <?php if($gid == $game['gid']){echo "selected";}?>><?=$game['name']?></option>
+                    <?php
+                            endforeach;
+                        endif;
+                    ?>
                 </select>
                 内容类型:
-                <select>
-                    <option>类型</option>
-                    <option>类型</option>
-                    <option>类型</option>
+                <select name="a_t_id">
+                    <option value="">请选择</option>
+                    <?php
+                    if($article_types):
+                        foreach($article_types as $type):
+                            ?>
+                            <option value="<?=$type['a_t_id']?>" <?php if($a_t_id == $type['a_t_id']){echo "selected";}?>><?=$type['name']?></option>
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
                 </select><br/>
                 游戏角色:
-                <select>
-                    <option>角色</option>
-                    <option>角色</option>
-                    <option>角色</option>
+                <select name="rid" id="rid">
+                    <option value="">请选择</option>
+                    <?php
+                    if($roles):
+                        foreach($roles as $role):
+                            ?>
+                            <option value="<?=$role['rid']?>" <?php if($rid == $role['rid']){echo "selected";}?>><?=$role['name']?></option>
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
                 </select>
                 内容形式:
-                <select>
-                    <option>形式</option>
-                    <option>形式</option>
-                    <option>形式</option>
+                <select name="a_f_id">
+                    <option value="">请选择</option>
+                    <?php
+                    if($article_forms):
+                        foreach($article_forms as $form):
+                            ?>
+                            <option value="<?=$form['a_f_id']?>" <?php if($a_f_id == $form['a_f_id']){echo "selected";}?>><?=$form['name']?></option>
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
                 </select>
                 <input class="submit" type="submit" value="查询" style="cursor:pointer;"/>
             </form>
@@ -44,66 +73,55 @@
     </div>
     <hr class="hr_h"/>
     <div>
+        <?php
+            if($article_list):
+                foreach($article_list as $article):
+        ?>
         <div class="common_box">
             <div class="content_item">
-                <div class="a_title">标题</div>
-                <div class="common_margin">摘要: <span>很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL手在比赛时光芒四很多人看到LPL手在比赛时光芒四很多人看到LPL手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四</span></div>
-                <div class="common_margin">原创时间: <span>2016-03-28 10:46:59</span></div>
+                <div class="a_title"><?=$article['title']?></div>
+                <div class="common_margin">摘要: <span><?=$article['summary']?></span></div>
+                <div class="common_margin">原创时间: <span><?=date('Y-m-d H:i:s', $article['ctime'])?></span></div>
                 <div class="common_margin">
-                    <a class="common_a" href="#" target="_blank">链接原文</a>
-                    <a class="common_a delete" href="#">删除</a>
-                    <a class="common_a" href="/contentEdit">编辑</a>
+                    原文链接: <a class="common_a" href="<?=$article['url']?>" target="_blank"><?=$article['url']?></a><br/><br/>
+                    <a class="common_a delete" data-aid="<?=$article['aid']?>" href="javascript:void(0);">删除</a>
+                    <a class="common_a" href="/contentEdit?aid=<?=$article['aid']?>">编辑</a>
                 </div>
                 <div class="holder"></div>
             </div>
         </div>
-        <div class="common_box">
-            <div class="content_item">
-                <div class="a_title">标题</div>
-                <div class="common_margin">摘要: <span>很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四</span></div>
-                <div class="common_margin">原创时间: <span>2016-03-28 10:46:59</span></div>
-                <div class="common_margin">
-                   <a class="common_a" href="#" target="_blank">链接原文</a>
-                    <a class="common_a delete" href="#">删除</a>
-                    <a class="common_a" href="/contentEdit">编辑</a>
-                </div>
-                <div class="holder"></div>
-            </div>
-        </div>
-        <div class="common_box">
-            <div class="content_item">
-                <div class="a_title">标题</div>
-                <div class="common_margin">摘要: <span>很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四</span></div>
-                <div class="common_margin">原创时间: <span>2016-03-28 10:46:59</span></div>
-                <div class="common_margin">
-                    <a class="common_a" href="#" target="_blank">链接原文</a>
-                    <a class="common_a delete" href="#">删除</a>
-                    <a class="common_a" href="/contentEdit">编辑</a>
-                </div>
-                <div class="holder"></div>
-            </div>
-        </div>
-        <div class="common_box">
-            <div class="content_item">
-                <div class="a_title">标题</div>
-                <div class="common_margin">摘要: <span>很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四很多人看到LPL的职业选手在比赛时光芒四</span></div>
-                <div class="common_margin">原创时间: <span>2016-03-28 10:46:59</span></div>
-                <div class="common_margin">
-                    <a class="common_a" href="#" target="_blank">链接原文</a>
-                    <a class="common_a delete" href="#">删除</a>
-                    <a class="common_a" href="/contentEdit">编辑</a>
-                </div>
-                <div class="holder"></div>
-            </div>
-        </div>
+        <?php
+                endforeach;
+        ?>
         <div id="pager1"></div>
+        <?php
+            endif;
+        ?>
     </div>
     <script type="text/javascript">
         $("#pager1").createPage({
-            pageCount: 10,
-            current: 3,
+            pageCount: <?=$pageCount?>,
+            current: <?=$page?>,
             backFn: function (page) {
-                window.location.reload();
+
+                var query = location.search, paramObj = {};
+                if(query.indexOf('?') != -1){
+                    var str = query.substr(1);
+                    var strs = str.split('&');
+                    for(var i=0; i<strs.length; i++){
+                        var item = strs[i].split('=');
+                        paramObj[item[0]] = item[1];
+                    }
+                }
+                paramObj['page'] = page;
+                var queryArr = [], i = null;
+                for(i in paramObj){
+                    var item = i + '='+ paramObj[i];
+                    queryArr.push(item);
+                }
+                query = queryArr.join('&');
+
+                window.location.href = '?' + query;
             }
         })
     </script>
