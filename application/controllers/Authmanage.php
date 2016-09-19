@@ -15,7 +15,7 @@ class AuthmanageController extends AbstractController {
     public function indexAction() {
         //判断用户是否登录
         $this->isLogin();
-        $pageSize = 1;
+        $pageSize = 10;
         $currentPage = (int)Comm_Context::param('page', 1);
         //日志总条数
         $logCount = User_UserModel::getRootLogCount();

@@ -188,7 +188,6 @@ class Comm_Context {
 		}else{
 			$real_ip = self::get_server('REMOTE_ADDR');
 		}
-		
 		return $to_long ? Comm_Util::ip2long($real_ip) : $real_ip;
 	}
 	

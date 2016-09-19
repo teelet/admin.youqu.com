@@ -33,6 +33,9 @@ class Ajax_ArticleController extends AbstractController {
         $this->data['aid'] = Comm_Context::form('aid', 0);
         $this->data['json'] = Comm_Context::form('json');
         $res = Article_ArticleModel::updateArticleContent($this->data['aid'], $this->data['json']);
+        // 写操作log, 不在意log是否写成功
+        $article = Article_ArticleModel::getArticleContent($this->data['aid']);
+        $resWriteLog = Comm_Log::writeLog("修改文章，文章aid：".$this->data['aid']."，标题：".$article["result"]["title"]);
         if($res['code'] == 0){
             $this->data['status'] = 0;
             $this->data['result'] = "操作成功";

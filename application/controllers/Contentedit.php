@@ -19,6 +19,7 @@ class ContenteditController extends AbstractController {
         $this->data['aid'] = Comm_Context::param('aid', 0);
         //获取文章内容
         $article = Article_ArticleModel::getArticleContent($this->data['aid']);
+        
         $this->data['article'] = $article['result'];
         //获取内容类型
         $this->data['article_types'] = Article_ArticleModel::getArticleTypes();
