@@ -6,9 +6,10 @@ class Comm_Log{
 	 */
 	public static function writeLog($msg){
 		try {
+			Comm_Context::init();
 			$user = Comm_Context::cookie("user");
-			// $ip = Comm_Context::get_client_ip(); // 函数功能待检查
-			$ip = $_SERVER["REMOTE_ADDR"];
+			$ip = Comm_Context::get_client_ip(); 
+			// $ip = $_SERVER["REMOTE_ADDR"];
 
 			$config = Comm_Config::getPhpConf('db/db.'.self::db.'.write');
         	$instance = Comm_Db_Handler::getInstance(self::db, $config);
