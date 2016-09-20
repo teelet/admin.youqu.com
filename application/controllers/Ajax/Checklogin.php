@@ -45,8 +45,9 @@ class Ajax_CheckloginController extends AbstractController{
                     break;
             }
             //入session,cookie
-            setcookie('user', $username);
-            setcookie('status', 'login');
+            $expire = time() + 3600 * 12;
+            setcookie('user', $username, $expire);
+            setcookie('status', 'login', $expire);
         }
 
         $this->jsonResult();
