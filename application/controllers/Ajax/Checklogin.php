@@ -45,7 +45,7 @@ class Ajax_CheckloginController extends AbstractController{
                     break;
             }
             //入session,cookie
-            $expire = time() + 3600 * 12;
+            $expire = time() + Comm_Config::getPhpConf("common.cookie_valid_period");
             setcookie('user', $username, $expire);
             setcookie('status', 'login', $expire);
         }
